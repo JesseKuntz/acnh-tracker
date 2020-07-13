@@ -1,5 +1,7 @@
 # acnh-tracker
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1671ee90-895c-4d71-aaca-62b263f16802/deploy-status)](https://app.netlify.com/sites/ac-tracker/deploys)
+
 ## CLI Commands
 
 ``` bash
@@ -15,8 +17,6 @@ npm run build
 # test the production build locally
 npm run serve
 
-# run tests with jest and preact-render-spy 
+# run tests with jest and preact-render-spy
 npm run test
 ```
-
-For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
