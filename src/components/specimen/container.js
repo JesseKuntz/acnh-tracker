@@ -30,7 +30,7 @@ export default function SpecimenContainer({type}) {
     <Fragment>
       <input type="text" id="specimenFilter" placeholder={placeholder} onKeyUp={filter} />
       <div class={`${style.container} specimen-container`}>
-        {Specimens[type].map(specimen => <Specimen url={`../../assets/${type}/png/${specimen.img}.png`} name={specimen.name} key={specimen.name} />)}
+        {Specimens[type].map(specimen => <Specimen url={`../../assets/${type}/webp/${specimen.img}.webp`} image={specimen.img} type={type} name={specimen.name} key={specimen.name} />)}
       </div>
     </Fragment>
   );
