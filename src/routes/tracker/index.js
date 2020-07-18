@@ -11,7 +11,7 @@ export default class Tracker extends Component {
 
 	render({ type }) {
 		return (
-			<div class={style.profile}>
+			<div class={style.tracker}>
 				<h1 class={style.title}>{type}</h1>
 				<p>Click each {type} to mark that you have caught it!</p>
 				<SpecimenContainer type={type} />

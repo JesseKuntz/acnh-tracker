@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
+const netlifyIdentity = require('netlify-identity-widget');
 
 import Header from './header';
 
@@ -16,6 +17,10 @@ export default class App extends Component {
 	handleRoute = e => {
 		this.currentUrl = e.url;
 	};
+
+	componentDidMount() {
+		netlifyIdentity.init();
+	}
 
 	render() {
 		return (
