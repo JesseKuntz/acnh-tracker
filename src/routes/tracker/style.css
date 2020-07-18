@@ -1,6 +1,5 @@
 .tracker {
-	padding: 56px 20px;
-	min-height: 100%;
+	padding: var(--page-padding-top) 14px 56px;
 	width: 100%;
 }
 

@@ -1,31 +1,39 @@
-.header {
+.headerSecondary {
+	position: fixed;
+	left: 0;
+	top: 56px;
+	width: 100%;
+	background: #004d4d;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	z-index: 49;
+}
+
+.headerPrimary {
 	position: fixed;
 	left: 0;
 	top: 0;
 	width: 100%;
 	height: 56px;
-	padding: 0;
-	background: lightslategray;
+	background: teal;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	z-index: 50;
 }
 
-.header h1 {
+.headerPrimary h1 {
 	float: left;
 	margin: 0;
-	padding: 0 14px;
 	font-size: 20px;
 	line-height: 56px;
 	font-weight: 400;
 	color: #FFF;
 }
 
-.header nav {
+.headerPrimary nav {
 	float: right;
 	font-size: 100%;
 }
 
-.header nav a {
+.headerPrimary nav a {
 	display: inline-block;
 	height: 56px;
 	line-height: 56px;
@@ -39,16 +47,17 @@
 	will-change: background-color;
 }
 
-.header nav a:hover,
-.header nav a:active {
+.headerPrimary nav a:hover,
+.headerPrimary nav a:active {
 	background: rgba(0,0,0,0.2);
 }
 
-.header nav a.active {
-	background: rgba(0,0,0,0.4);
+.headerPrimary nav a.active {
+	background: #004d4d;
 }
 
 .content {
 	max-width: 1080px;
 	margin: auto;
+	padding-left: 14px;
 }

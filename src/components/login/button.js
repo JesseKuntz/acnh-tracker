@@ -8,9 +8,11 @@ export default class LoginButton extends Component {
     netlifyIdentity.open();
   }
 
-	render() {
-		return (
-      <button class={style.login} onClick={this.clickHandler}>Log in</button>
-		);
-	}
+  render() {
+    return (
+      <div class={style.container}>
+        <button class={style.login} onClick={this.clickHandler}>Log in</button>
+      </div>
+    );
+  }
 }

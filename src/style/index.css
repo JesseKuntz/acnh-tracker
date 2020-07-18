@@ -11,6 +11,10 @@ html, body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+	--page-padding-top: 112px;
+}
+
 * {
 	box-sizing: border-box;
 }

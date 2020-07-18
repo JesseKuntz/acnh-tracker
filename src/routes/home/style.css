@@ -1,4 +1,3 @@
 .home {
-	padding: 56px 14px;
-	min-height: 100%;
+	padding: var(--page-padding-top) 14px;
 }
