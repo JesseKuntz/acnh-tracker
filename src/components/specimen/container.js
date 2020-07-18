@@ -1,4 +1,4 @@
-import {Fragment} from 'preact';
+import { Fragment } from 'preact';
 
 import Specimen from './index';
 import Specimens from '../../assets/index';

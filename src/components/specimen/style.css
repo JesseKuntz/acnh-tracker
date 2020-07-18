@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   width: 102px;
+  cursor: pointer;
 }
 
 .logo {
@@ -45,4 +46,8 @@ input {
   border: 1px solid black;
   padding: 10px;
   font-size: 16px;
+}
+
+.selected {
+  background: rgb(50,205,50, .5);
 }
