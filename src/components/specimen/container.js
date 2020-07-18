@@ -26,11 +26,13 @@ function filter() {
 export default function SpecimenContainer({type}) {
   const placeholder = `Search for a ${type}!`;
 
+  const typeSlug = type.replace(' ', '-');
+
   return (
     <Fragment>
       <input type="text" id="specimenFilter" placeholder={placeholder} onKeyUp={filter} />
       <div class={`${style.container} specimen-container`}>
-        {Specimens[type].map(specimen => <Specimen url={`../../assets/${type}/webp/${specimen.img}.webp`} image={specimen.img} type={type} name={specimen.name} key={specimen.name} />)}
+        {Specimens[typeSlug].map(specimen => <Specimen image={specimen.img} type={typeSlug} name={specimen.name} key={specimen.name} />)}
       </div>
     </Fragment>
   );
