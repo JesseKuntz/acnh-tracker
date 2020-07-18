@@ -1,25 +1,24 @@
-.headerSecondary {
+.header {
 	position: fixed;
 	left: 0;
-	top: 56px;
 	width: 100%;
-	background: #004d4d;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.header-secondary {
+	top: 56px;
+	background: #004d4d;
 	z-index: 49;
 }
 
-.headerPrimary {
-	position: fixed;
-	left: 0;
+.header-primary {
 	top: 0;
-	width: 100%;
 	height: 56px;
 	background: teal;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 	z-index: 50;
 }
 
-.headerPrimary h1 {
+.header-primary h1 {
 	float: left;
 	margin: 0;
 	font-size: 20px;
@@ -28,12 +27,12 @@
 	color: #FFF;
 }
 
-.headerPrimary nav {
+.header-primary nav {
 	float: right;
 	font-size: 100%;
 }
 
-.headerPrimary nav a {
+.header-primary nav a {
 	display: inline-block;
 	height: 56px;
 	line-height: 56px;
@@ -47,12 +46,12 @@
 	will-change: background-color;
 }
 
-.headerPrimary nav a:hover,
-.headerPrimary nav a:active {
+.header-primary nav a:hover,
+.header-primary nav a:active {
 	background: rgba(0,0,0,0.2);
 }
 
-.headerPrimary nav a.active {
+.header-primary nav a.active {
 	background: #004d4d;
 }
 

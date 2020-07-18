@@ -7,7 +7,7 @@ import style from './style.css';
 
 const Header = () => (
 	<Fragment>
-		<header class={style.headerPrimary}>
+		<header class={`${style['header-primary']} ${style.header}`}>
 			<div class={style.content}>
 				<Link activeClassName={style.active} href="/"><h1>AC Tracker ✅</h1></Link>
 
@@ -18,7 +18,7 @@ const Header = () => (
 				</nav>
 			</div>
 		</header>
-		<header class={style.headerSecondary}>
+		<header class={`${style['header-secondary']} ${style.header}`}>
 			<div class={style.content}>
 				<LoginInfo />
 			</div>

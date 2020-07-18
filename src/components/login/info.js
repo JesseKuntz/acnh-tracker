@@ -41,13 +41,13 @@ export default class LoginInfo extends Component {
 
   render() {
     if (!this.state.user) {
-      return <div class={style.infoContainer}>
+      return <div class={style['info-container']}>
         <LoginButton />
       </div>
     }
 
     return (
-      <div class={style.infoContainer}>
+      <div class={style['info-container']}>
         <div class={style.info}>Account: {this.state.user.user_metadata.full_name}</div>
         <div class={style.logout} onClick={this.clickHandler}>Log out</div>
       </div>
