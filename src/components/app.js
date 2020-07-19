@@ -29,14 +29,6 @@ export default class App extends Component {
 		this.clearSpecimenStyling();
 	};
 
-	resetZoom() {
-		document.querySelector('[name="viewport"]').remove();
-		document.querySelector('head').innerHTML += '<meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=0">';
-
-		document.querySelector('[name="viewport"]').remove();
-		document.querySelector('head').innerHTML +='<meta name="viewport" content="width=device-width, initial-scale=yes">';
-	}
-
 	setLockScroll() {
 		document.body.style.top = `-${window.scrollY}px`;
 		document.body.style.position = 'fixed';
@@ -55,11 +47,13 @@ export default class App extends Component {
 
 	clearModalStyling() {
 		this.clearLockScroll();
-
-		this.resetZoom();
 	}
 
 	componentDidMount() {
+		// disable zooming
+		document.querySelector('[name="viewport"]').remove();
+		document.querySelector('head').innerHTML += '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>';
+
 		netlifyIdentity.init();
 
 		netlifyIdentity.on('open', () => this.setModalStyling());
