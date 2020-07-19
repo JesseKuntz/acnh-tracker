@@ -20,6 +20,11 @@ export default class App extends Component {
 
 	componentDidMount() {
 		netlifyIdentity.init();
+
+		netlifyIdentity.on('open', () => document.body.style.overflowY = 'hidden');
+		netlifyIdentity.on('close', () => document.body.style.overflowY = 'initial');
+
+		netlifyIdentity.on('login', () => netlifyIdentity.close());
 	}
 
 	render() {
