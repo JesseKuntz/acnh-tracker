@@ -29,9 +29,7 @@ export default class App extends Component {
 		this.clearSpecimenStyling();
 	};
 
-	clearModalStyling() {
-		document.body.style.overflowY = 'initial';
-
+	resetZoom() {
 		document.querySelector('[name="viewport"]').remove();
 		document.querySelector('head').innerHTML += '<meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=0">';
 
@@ -39,10 +37,32 @@ export default class App extends Component {
 		document.querySelector('head').innerHTML +='<meta name="viewport" content="width=device-width, initial-scale=yes">';
 	}
 
+	setLockScroll() {
+		document.body.style.top = `-${window.scrollY}px`;
+		document.body.style.position = 'fixed';
+	}
+
+	clearLockScroll() {
+		document.body.style.position = 'initial';
+		const scrollY = document.body.style.top;
+		document.body.style.top = '';
+		window.scrollTo(0, parseInt(scrollY || '0') * -1);
+	}
+
+	setModalStyling() {
+		this.setLockScroll();
+	}
+
+	clearModalStyling() {
+		this.clearLockScroll();
+
+		this.resetZoom();
+	}
+
 	componentDidMount() {
 		netlifyIdentity.init();
 
-		netlifyIdentity.on('open', () => document.body.style.overflowY = 'hidden');
+		netlifyIdentity.on('open', () => this.setModalStyling());
 		netlifyIdentity.on('close', () => this.clearModalStyling());
 
 		netlifyIdentity.on('login', () => netlifyIdentity.close());
