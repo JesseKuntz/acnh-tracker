@@ -18,11 +18,21 @@ export default class App extends Component {
 		this.currentUrl = e.url;
 	};
 
+	clearModalStyling() {
+		document.body.style.overflowY = 'initial';
+
+		document.querySelector('[name="viewport"]').remove();
+		document.querySelector('head').innerHTML += '<meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=0">';
+
+		document.querySelector('[name="viewport"]').remove();
+		document.querySelector('head').innerHTML +='<meta name="viewport" content="width=device-width, initial-scale=yes">';
+	}
+
 	componentDidMount() {
 		netlifyIdentity.init();
 
 		netlifyIdentity.on('open', () => document.body.style.overflowY = 'hidden');
-		netlifyIdentity.on('close', () => document.body.style.overflowY = 'initial');
+		netlifyIdentity.on('close', () => this.clearModalStyling());
 
 		netlifyIdentity.on('login', () => netlifyIdentity.close());
 	}
