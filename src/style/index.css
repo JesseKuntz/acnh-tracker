@@ -24,9 +24,3 @@ html, body {
 	max-width: 1080px;
 	margin: auto;
 }
-
-@media only screen and (max-width: 480px) {
-	#netlify-identity-widget {
-		border: 16px solid rgba(0, 0, 0, 0.8) !important;
-	}
-}
