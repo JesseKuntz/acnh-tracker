@@ -7,7 +7,7 @@ import style from './style';
 
 function filter() {
   let input, filter, container, item, p, i, txtValue;
-  input = document.getElementById('specimenFilter');
+  input = document.getElementById('specimen-filter');
   filter = input.value.toUpperCase();
   container = document.querySelector('.specimen-container');
   item = container.getElementsByTagName('div');
@@ -30,7 +30,7 @@ export default function SpecimenContainer({type}) {
 
   return (
     <Fragment>
-      <input type="text" id="specimenFilter" placeholder={placeholder} onKeyUp={filter} />
+      <input type="text" id="specimen-filter" placeholder={placeholder} onKeyUp={filter} />
       <div class={`${style.container} specimen-container`}>
         {Specimens[typeSlug].map(specimen => <Specimen image={specimen.img} type={typeSlug} name={specimen.name} key={specimen.name} />)}
       </div>

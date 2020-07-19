@@ -9,6 +9,15 @@ import Home from '../routes/home';
 import Tracker from '../routes/tracker';
 
 export default class App extends Component {
+	clearSpecimenStyling() {
+		window.scrollTo(0, 0);
+
+		const input = document.querySelector('#specimen-filter');
+
+		if (input) {
+			input.value = '';
+		}
+	}
 
 	/** Gets fired when the route changes.
 	 *	@param {Object} event	"change" event from [preact-router](http://git.io/preact-router)
@@ -16,6 +25,8 @@ export default class App extends Component {
 	 */
 	handleRoute = e => {
 		this.currentUrl = e.url;
+
+		this.clearSpecimenStyling();
 	};
 
 	clearModalStyling() {
