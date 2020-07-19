@@ -6,8 +6,8 @@ import LoginButton from './button';
 import style from './style';
 
 const CSS_PADDING_VAR_NAME = '--page-padding-top';
-const LOGGED_IN_PADDING = '86px';
-const LOGGED_OUT_PADDING = '112px';
+const LOGGED_IN_PADDING = '92px';
+const LOGGED_OUT_PADDING = '118px';
 
 export default class LoginInfo extends Component {
   constructor() {
