@@ -50,10 +50,6 @@ export default class App extends Component {
 	}
 
 	componentDidMount() {
-		// disable zooming
-		// document.querySelector('[name="viewport"]').remove();
-		// document.querySelector('head').innerHTML += '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>';
-
 		netlifyIdentity.init();
 
 		netlifyIdentity.on('open', () => this.setModalStyling());
