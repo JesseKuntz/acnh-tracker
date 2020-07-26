@@ -2,13 +2,31 @@ import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 const netlifyIdentity = require('netlify-identity-widget');
 
+import getSingleAccount from '../fauna/get-single-account';
+
 import Header from './header';
 
 // Code-splitting is automated for routes
 import Home from '../routes/home';
 import Tracker from '../routes/tracker';
 
+async function getSpecimenData(email) {
+	const result = await getSingleAccount(email);
+
+	if (result) {
+		return result[0].data;
+	}
+}
+
 export default class App extends Component {
+	constructor() {
+		super();
+
+		this.state = {
+			specimenData: {},
+		}
+	}
+
 	clearSpecimenStyling() {
 		window.scrollTo(0, 0);
 
@@ -49,13 +67,33 @@ export default class App extends Component {
 		this.clearLockScroll();
 	}
 
+	async setSpecimenData() {
+		const user = netlifyIdentity.currentUser();
+
+		if (user) {
+			this.setState({specimenData: await getSpecimenData(user.email)});
+		}
+	}
+
+	handleLogin() {
+		netlifyIdentity.close();
+		this.setSpecimenData();
+	}
+
+	handleLogout() {
+		this.setState({specimenData: {}});
+	}
+
 	componentDidMount() {
 		netlifyIdentity.init();
 
 		netlifyIdentity.on('open', () => this.setModalStyling());
 		netlifyIdentity.on('close', () => this.clearModalStyling());
 
-		netlifyIdentity.on('login', () => netlifyIdentity.close());
+		netlifyIdentity.on('login', () => this.handleLogin());
+		netlifyIdentity.on('logout', () => this.handleLogout());
+
+		this.setSpecimenData();
 	}
 
 	render() {
@@ -64,7 +102,7 @@ export default class App extends Component {
 				<Header />
 				<Router onChange={this.handleRoute}>
 					<Home path="/" />
-					<Tracker path="/tracker/:type" />
+					<Tracker path="/tracker/:type" data={this.state.specimenData} />
 				</Router>
 			</div>
 		);

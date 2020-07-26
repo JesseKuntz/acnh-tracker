@@ -17,6 +17,7 @@
     ]
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-preact-pure": "^2.0.0",
     "eslint": "^6.0.1",
@@ -25,10 +26,12 @@
     "jest": "^24.9.0",
     "jest-preset-preact": "^1.0.0",
     "preact-cli": "^3.0.0-rc.6",
+    "preact-cli-plugin-env-vars": "^1.2.1",
     "preact-render-spy": "^1.2.1",
     "sirv-cli": "^0.4.5"
   },
   "dependencies": {
+    "faunadb": "^2.14.2",
     "netlify-identity-widget": "^1.8.0",
     "preact": "^10.3.2",
     "preact-render-to-string": "^5.1.4",
