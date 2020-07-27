@@ -17,7 +17,7 @@ export default class Specimen extends Component {
     super(props);
 
     this.state = {
-      selected: false,
+      selected: this.props.caught,
     }
 
     this.clickHandler = this.clickHandler.bind(this);

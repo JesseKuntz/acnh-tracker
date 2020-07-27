@@ -71,7 +71,8 @@ export default class App extends Component {
 		const user = netlifyIdentity.currentUser();
 
 		if (user) {
-			this.setState({specimenData: await getSpecimenData(user.email)});
+			const data = await getSpecimenData(user.email);
+			this.setState({ specimenData: data });
 		}
 	}
 
