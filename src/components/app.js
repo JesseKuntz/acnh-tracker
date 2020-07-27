@@ -24,6 +24,7 @@ export default class App extends Component {
 
 		this.state = {
 			specimenData: {},
+			isLoading: false,
 		}
 	}
 
@@ -71,8 +72,9 @@ export default class App extends Component {
 		const user = netlifyIdentity.currentUser();
 
 		if (user) {
+			this.setState({ isLoading: true });
 			const data = await getSpecimenData(user.email);
-			this.setState({ specimenData: data });
+			this.setState({ specimenData: data }, () => this.setState({ isLoading: false }));
 		}
 	}
 
@@ -103,7 +105,7 @@ export default class App extends Component {
 				<Header />
 				<Router onChange={this.handleRoute}>
 					<Home path="/" />
-					<Tracker path="/tracker/:type" data={this.state.specimenData} />
+					<Tracker path="/tracker/:type" data={this.state.specimenData} isLoading={this.state.isLoading} />
 				</Router>
 			</div>
 		);
