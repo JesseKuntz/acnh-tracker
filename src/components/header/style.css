@@ -1,18 +1,25 @@
 .header {
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	position: relative;
+}
+
+.header-container {
 	position: fixed;
 	left: 0;
 	width: 100%;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .header-secondary {
-	top: 56px;
 	background: #004d4d;
+	z-index: 48;
+}
+
+.header-menu {
+	background: teal;
 	z-index: 49;
 }
 
 .header-primary {
-	top: 0;
 	height: 56px;
 	background: teal;
 	z-index: 50;
@@ -27,16 +34,10 @@
 	color: #FFF;
 }
 
-.header-primary nav {
-	float: right;
-	font-size: 100%;
-}
-
-.header-primary nav a {
-	display: inline-block;
+.header-menu nav a {
+	display: flex;
 	height: 56px;
 	line-height: 56px;
-	padding: 0 14px;
 	font-size: 24px;
 	min-width: 50px;
 	text-align: center;
@@ -44,23 +45,73 @@
 	text-decoration: none;
 	color: #FFF;
 	will-change: background-color;
+	cursor: pointer;
 }
 
-.header-primary nav a:hover,
-.header-primary nav a:active {
+.header-menu nav a:hover,
+.header-menu nav a:active {
 	background: rgba(0,0,0,0.2);
 }
 
-.header-primary nav a.active {
+.header-menu nav a.active {
 	background: #004d4d;
+}
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
 }
 
 .content {
 	max-width: 1080px;
 	margin: auto;
 	padding-left: 14px;
+	height: 100%;
 }
 
 .check {
 	width: 56px;
+}
+
+.hamburger-buns {
+	float: right;
+	margin-right: 14px;
+	height: 56px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+	height: 5px;
+	border-radius: 4px;
+  background-color: white;
+  margin: 6px 0;
+	transition: 0.2s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+	opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.icon {
+	width: 70px;
+}
+
+.header a, .header div {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
