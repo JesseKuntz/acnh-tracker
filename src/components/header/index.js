@@ -23,10 +23,8 @@ class Header extends Component {
 		};
 	}
 
-	clickHandler(x) {
+	clickHandler() {
 		this.setState(prevState => ({ isMenuOpen: !prevState.isMenuOpen }));
-		console.log(x);
-		x.target.classList.toggle("change");
 	}
 
 	render() {
@@ -40,7 +38,7 @@ class Header extends Component {
 						</Link>
 
 						<div class={style['hamburger-buns']}>
-							<div class={getHamburgerClass(this.state.isMenuOpen)} onClick={x => this.clickHandler(x)}>
+							<div class={getHamburgerClass(this.state.isMenuOpen)} onClick={() => this.clickHandler()}>
 								<div class={style.bar1} />
 								<div class={style.bar2} />
 								<div class={style.bar3} />

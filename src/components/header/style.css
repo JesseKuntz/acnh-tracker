@@ -48,6 +48,10 @@
 	cursor: pointer;
 }
 
+.header-menu nav a:not(:last-child) {
+	border-bottom: 1px solid #004d4d;
+}
+
 .header-menu nav a:hover,
 .header-menu nav a:active {
 	background: rgba(0,0,0,0.2);
