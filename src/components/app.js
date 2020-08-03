@@ -29,12 +29,14 @@ export default class App extends Component {
 	}
 
 	clearSpecimenStyling() {
-		window.scrollTo(0, 0);
+		if (typeof window !== "undefined") {
+			window.scrollTo(0, 0);
 
-		const input = document.querySelector('#specimen-filter');
+			const input = document.querySelector('#specimen-filter');
 
-		if (input) {
-			input.value = '';
+			if (input) {
+				input.value = '';
+			}
 		}
 	}
 

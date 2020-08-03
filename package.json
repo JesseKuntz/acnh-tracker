@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "preact build --no-prerender",
+    "build": "preact build",
     "serve": "sirv build --cors --single",
     "dev": "preact watch",
     "lint": "eslint src",
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "faunadb": "^2.14.2",
-    "netlify-identity-widget": "^1.8.0",
+    "netlify-identity-widget": "^1.9.1",
     "preact": "^10.3.2",
     "preact-render-to-string": "^5.1.4",
     "preact-router": "^3.2.1"
