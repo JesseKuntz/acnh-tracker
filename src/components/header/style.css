@@ -61,6 +61,15 @@
 	background: #004d4d;
 }
 
+.menu-text {
+	text-transform: capitalize;
+	font-size: 20px;
+}
+
+.menu-link-wrapper {
+	display: flex;
+}
+
 .hide {
 	display: none;
 }
