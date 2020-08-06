@@ -6,6 +6,7 @@
   align-items: center;
   width: 102px;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .logo {

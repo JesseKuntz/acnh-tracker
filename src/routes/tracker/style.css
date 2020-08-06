@@ -17,6 +17,7 @@ h1 {
   margin-bottom: 6px;
 }
 
+/* Loader */
 @keyframes ldio-57juryv5dwc-o {
     0%    { opacity: 1; transform: translate(0 0) }
    49.99% { opacity: 1; transform: translate(50px,0) }
