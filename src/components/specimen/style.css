@@ -52,3 +52,16 @@ input {
 .selected {
   background: rgb(50,205,50, .5);
 }
+
+.button {
+  height: 50px;
+  background: teal;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid #004d4d;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  margin-bottom: 24px;
+  width: 100%;
+}

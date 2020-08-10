@@ -37,6 +37,7 @@ h1 {
   top: 25px;
   left: 0px;
   margin-top: 16px;
+  z-index: 1;
 }
 .ldio-57juryv5dwc div:nth-child(1) {
   background: #014d4c;

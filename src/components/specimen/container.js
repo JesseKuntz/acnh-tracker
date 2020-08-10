@@ -1,4 +1,4 @@
-import { Fragment } from 'preact';
+import { h, Fragment, Component } from 'preact';
 
 import Specimen from './index';
 import Specimens from '../../assets/index';
@@ -38,8 +38,8 @@ function slugify(string) {
     .replace(/-+$/, '') // Trim - from end of text
 }
 
-function checkIfCaught({ specimen, data, type }) {
-  const slug = slugify(specimen.name);
+function checkIfCaught({ name, data, type }) {
+  const slug = slugify(name);
 
   if (data[type]) {
     return data[type][slug];
@@ -48,20 +48,34 @@ function checkIfCaught({ specimen, data, type }) {
 
 function renderSpecimens(type, data) {
   return Specimens[type].map(specimen => {
-    const isCaught = checkIfCaught({ specimen, data, type });
+    const isCaught = checkIfCaught({ name: specimen.name, data, type });
     return <Specimen image={specimen.img} type={type} name={specimen.name} key={isCaught} caught={isCaught} />
   });
 }
 
-export default function SpecimenContainer({ type, processedType, data }) {
-  const placeholder = `Search for a ${processedType}!`;
+export default class SpecimenContainer extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <Fragment>
-      <input type="text" id="specimen-filter" placeholder={placeholder} onKeyUp={filter} />
-      <div class={`${style.container} specimen-container`}>
-        {renderSpecimens(type, data)}
-      </div>
-    </Fragment>
-  );
+    this.state = {
+      showSave: false,
+      newCatchData: {},
+    };
+  }
+
+  render() {
+    const { type, processedType, data } = this.props;
+
+    const placeholder = `Search for a ${processedType}!`;
+
+    return (
+      <Fragment>
+        {this.state.showSave && <button class={style.button}>SAVE</button>}
+        <input type="text" id="specimen-filter" placeholder={placeholder} onKeyUp={filter} />
+        <div class={`${style.container} specimen-container`}>
+          {renderSpecimens(type, data)}
+        </div>
+      </Fragment>
+    );
+  }
 }
