@@ -24,6 +24,7 @@ export default class Specimen extends Component {
   }
 
   clickHandler() {
+    this.props.clickHandler(this.props.name);
     this.setState(prevState => ({selected: !prevState.selected}))
   }
 

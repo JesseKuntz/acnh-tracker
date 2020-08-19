@@ -14,8 +14,12 @@ async function getSpecimenData(email) {
 	const result = await getSingleAccount(email);
 
 	if (result) {
-		return result[0].data;
+		return result[0];
 	}
+}
+
+function getAccountReference(accountData) {
+	return accountData.ref ? accountData.ref.value.id : null;
 }
 
 export default class App extends Component {
@@ -107,7 +111,7 @@ export default class App extends Component {
 				<Header />
 				<Router onChange={this.handleRoute}>
 					<Home path="/" />
-					<Tracker path="/tracker/:type" data={this.state.specimenData} isLoading={this.state.isLoading} />
+					<Tracker path="/tracker/:type" data={this.state.specimenData.data} accountRef={getAccountReference(this.state.specimenData)} isLoading={this.state.isLoading} />
 				</Router>
 			</div>
 		);

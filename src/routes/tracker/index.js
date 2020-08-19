@@ -38,7 +38,7 @@ export default class Tracker extends Component {
 				{dataExists(this.props.data) ?
 					<Fragment>
 						<p>Click each {processedType} to mark that you have caught it!</p>
-						<SpecimenContainer type={type} processedType={processedType} data={this.props.data} />
+						<SpecimenContainer type={type} processedType={processedType} data={this.props.data} accountRef={this.props.accountRef} />
 					</Fragment> :
 					<p>Click the log in button above to create an account and start tracking your catches!</p>
 				}

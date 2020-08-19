@@ -5,6 +5,8 @@ import Specimens from '../../assets/index';
 
 import style from './style';
 
+import saveCatchData from '../../fauna/save-catch-data';
+
 function filter() {
   let input, filter, container, item, p, i, txtValue;
   input = document.getElementById('specimen-filter');
@@ -38,19 +40,39 @@ function slugify(string) {
     .replace(/-+$/, '') // Trim - from end of text
 }
 
-function checkIfCaught({ name, data, type }) {
+function hasBeenCaught({ name, data }) {
   const slug = slugify(name);
 
-  if (data[type]) {
-    return data[type][slug];
+  if (data) {
+    return data[slug];
   }
 }
 
-function renderSpecimens(type, data) {
+function renderSpecimens(type, data, clickHandler) {
   return Specimens[type].map(specimen => {
-    const isCaught = checkIfCaught({ name: specimen.name, data, type });
-    return <Specimen image={specimen.img} type={type} name={specimen.name} key={isCaught} caught={isCaught} />
+    const isCaught = hasBeenCaught({ name: specimen.name, data: data[type] });
+    return <Specimen image={specimen.img} type={type} name={specimen.name} key={`${specimen.name}:${isCaught}`} caught={isCaught} clickHandler={clickHandler} />
   });
+}
+
+function diffObjects(newObj, oldObj) {
+  const keys = Object.keys(newObj);
+
+  for (let keyIndex = 0; keyIndex < keys.length; keyIndex++) {
+    const newVal = newObj[keys[keyIndex]];
+    const oldVal = oldObj[keys[keyIndex]];
+
+    if ((newVal && !oldVal) || (!newVal && oldVal)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+async function saveNewCatchData(data, accountRef, type) {
+  await saveCatchData(data, accountRef, type);
+  window.location.reload();
 }
 
 export default class SpecimenContainer extends Component {
@@ -59,21 +81,45 @@ export default class SpecimenContainer extends Component {
 
     this.state = {
       showSave: false,
-      newCatchData: {},
+      catchData: {},
     };
+
+    this.clickHandler = this.clickHandler.bind(this);
+  }
+
+  componentDidMount() {
+    const { data, type } = this.props;
+
+    if (data) {
+      this.setState({ catchData: data[type] }); // eslint-disable-line
+    } else {
+      console.log('no data on componentDidMount');
+    }
+  }
+
+  clickHandler(name) {
+    const { data, type } = this.props;
+
+    const catchData = Object.assign({}, this.state.catchData);
+    const isCaught = hasBeenCaught({ name, data: catchData });
+    const slugifiedName = slugify(name);
+
+    catchData[slugifiedName] = !isCaught;
+
+    this.setState({ catchData, showSave: diffObjects(catchData, data[type]) });
   }
 
   render() {
-    const { type, processedType, data } = this.props;
+    const { type, processedType, data, accountRef } = this.props;
 
     const placeholder = `Search for a ${processedType}!`;
 
     return (
       <Fragment>
-        {this.state.showSave && <button class={style.button}>SAVE</button>}
+        {this.state.showSave && <button class={style.button} onClick={() => saveNewCatchData(this.state.catchData, accountRef, type)}>SAVE</button>}
         <input type="text" id="specimen-filter" placeholder={placeholder} onKeyUp={filter} />
         <div class={`${style.container} specimen-container`}>
-          {renderSpecimens(type, data)}
+          {renderSpecimens(type, data, this.clickHandler)}
         </div>
       </Fragment>
     );
