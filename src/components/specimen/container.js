@@ -4,6 +4,7 @@ import Specimen from './index';
 import Specimens from '../../assets/index';
 
 import style from './style';
+import globalStyle from '../../routes/tracker/style.css';
 
 import saveCatchData from '../../fauna/save-catch-data';
 
@@ -55,7 +56,7 @@ function renderSpecimens(type, data, clickHandler) {
   });
 }
 
-function diffObjects(newObj, oldObj) {
+function areObjectsDifferent(newObj, oldObj) {
   const keys = Object.keys(newObj);
 
   for (let keyIndex = 0; keyIndex < keys.length; keyIndex++) {
@@ -70,9 +71,22 @@ function diffObjects(newObj, oldObj) {
   return false;
 }
 
-async function saveNewCatchData(data, accountRef, type) {
-  await saveCatchData(data, accountRef, type);
-  window.location.reload();
+function getSaveButtonClass(enableSave) {
+  const baseClass = style.button;
+
+  if (!enableSave) {
+    return `${baseClass} ${style.disabled}`;
+  }
+
+  return baseClass;
+}
+
+function getSaveButtonContent(isSaving, enableSave) {
+  if (!enableSave) {
+    return 'Saved';
+  }
+
+  return isSaving ? <div class={globalStyle.loader} /> : 'Save';
 }
 
 export default class SpecimenContainer extends Component {
@@ -80,7 +94,10 @@ export default class SpecimenContainer extends Component {
     super(props);
 
     this.state = {
-      showSave: false,
+      enableSave: false,
+      showError: false,
+      isSaving: false,
+      originalCatchData: {},
       catchData: {},
     };
 
@@ -91,32 +108,44 @@ export default class SpecimenContainer extends Component {
     const { data, type } = this.props;
 
     if (data) {
-      this.setState({ catchData: data[type] }); // eslint-disable-line
+      this.setState({ catchData: data[type], originalCatchData: data[type] }); // eslint-disable-line
     } else {
       console.log('no data on componentDidMount');
     }
   }
 
   clickHandler(name) {
-    const { data, type } = this.props;
-
     const catchData = Object.assign({}, this.state.catchData);
     const isCaught = hasBeenCaught({ name, data: catchData });
     const slugifiedName = slugify(name);
 
     catchData[slugifiedName] = !isCaught;
 
-    this.setState({ catchData, showSave: diffObjects(catchData, data[type]) });
+    this.setState({ catchData, enableSave: areObjectsDifferent(catchData, this.state.originalCatchData) });
+  }
+
+  async saveNewCatchData(data, accountRef, type) {
+    this.setState({ isSaving: true });
+
+    const result = await saveCatchData(data, accountRef, type);
+
+    if (result.data) {
+      return this.setState({ originalCatchData: result.data[type], enableSave: false, showError: false, isSaving: false });
+    }
+
+    return this.setState({ showError: true, isSaving: false });
   }
 
   render() {
     const { type, processedType, data, accountRef } = this.props;
+    const { enableSave, catchData, showError, isSaving } = this.state;
 
     const placeholder = `Search for a ${processedType}!`;
 
     return (
       <Fragment>
-        {this.state.showSave && <button class={style.button} onClick={() => saveNewCatchData(this.state.catchData, accountRef, type)}>SAVE</button>}
+        <button disabled={!enableSave} class={getSaveButtonClass(enableSave, isSaving)} onClick={() => this.saveNewCatchData(catchData, accountRef, type)}>{getSaveButtonContent(isSaving, enableSave)}</button>
+        {showError && <div class={style.error}>There was an error saving your catches - please check your network connection and then try again.</div>}
         <input type="text" id="specimen-filter" placeholder={placeholder} onKeyUp={filter} />
         <div class={`${style.container} specimen-container`}>
           {renderSpecimens(type, data, this.clickHandler)}

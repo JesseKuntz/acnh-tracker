@@ -10,11 +10,7 @@ function processType(type) {
 
 function renderSpinner(isLoading) {
 	if (isLoading) {
-		return (<div class={style['loadingio-spinner-dual-ball-ypssij3d88']}>
-			<div class={style['ldio-57juryv5dwc']}>
-				<div /><div /><div />
-			</div>
-		</div>);
+		return (<div class={`${style.loader} ${style.margin}`} />);
 	}
 }
 
@@ -37,7 +33,7 @@ export default class Tracker extends Component {
 
 				{dataExists(this.props.data) ?
 					<Fragment>
-						<p>Click each {processedType} to mark that you have caught it!</p>
+						<p>Click each {processedType} to mark that you have caught it! Once you edit your catches, the save button will be enabled.</p>
 						<SpecimenContainer type={type} processedType={processedType} data={this.props.data} accountRef={this.props.accountRef} />
 					</Fragment> :
 					<p>Click the log in button above to create an account and start tracking your catches!</p>

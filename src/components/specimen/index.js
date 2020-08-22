@@ -6,7 +6,7 @@ function getSpecimenClass(selected) {
   const baseClass = style.specimen;
 
   if (selected) {
-    return `${baseClass} ${style.selected}`
+    return `${baseClass} ${style.selected}`;
   }
 
   return baseClass;

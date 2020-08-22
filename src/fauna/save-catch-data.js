@@ -11,7 +11,8 @@ function saveCatchData(data, accountRef, type) {
       newData,
     )
   )
-  .then((ret) => console.log(ret))
+  .then((ret) => ret)
+  .catch((error) => error);
 }
 
 export default saveCatchData;
