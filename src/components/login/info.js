@@ -1,4 +1,5 @@
 import { h, Component } from 'preact';
+
 const netlifyIdentity = require('netlify-identity-widget');
 
 import LoginButton from './button';
@@ -14,20 +15,26 @@ export default class LoginInfo extends Component {
     super();
 
     this.state = {
-      user: null
-    }
+      user: null,
+    };
   }
 
   userLogin(user) {
     if (user) {
-      this.setState({user});
-      document.documentElement.style.setProperty(CSS_PADDING_VAR_NAME, LOGGED_IN_PADDING);
+      this.setState({ user });
+      document.documentElement.style.setProperty(
+        CSS_PADDING_VAR_NAME,
+        LOGGED_IN_PADDING
+      );
     }
   }
 
   userLogout() {
-    this.setState({user: null});
-    document.documentElement.style.setProperty(CSS_PADDING_VAR_NAME, LOGGED_OUT_PADDING);
+    this.setState({ user: null });
+    document.documentElement.style.setProperty(
+      CSS_PADDING_VAR_NAME,
+      LOGGED_OUT_PADDING
+    );
   }
 
   componentDidMount() {
@@ -41,15 +48,21 @@ export default class LoginInfo extends Component {
 
   render() {
     if (!this.state.user) {
-      return <div class={style['info-container']}>
-        <LoginButton />
-      </div>
+      return (
+        <div class={style['info-container']}>
+          <LoginButton />
+        </div>
+      );
     }
 
     return (
       <div class={style['info-container']}>
-        <div class={style.info}>Account: {this.state.user.user_metadata.full_name}</div>
-        <div class={style.logout} onClick={this.clickHandler}>Log out</div>
+        <div class={style.info}>
+          Account: {this.state.user.user_metadata.full_name}
+        </div>
+        <div class={style.logout} onClick={this.clickHandler}>
+          Log out
+        </div>
       </div>
     );
   }

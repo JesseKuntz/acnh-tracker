@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
+
 const netlifyIdentity = require('netlify-identity-widget');
 
 import getSingleAccount from '../fauna/get-single-account';
@@ -11,109 +12,114 @@ import Home from '../routes/home';
 import Tracker from '../routes/tracker';
 
 async function getSpecimenData(email) {
-	const result = await getSingleAccount(email);
+  const result = await getSingleAccount(email);
 
-	if (result) {
-		return result[0];
-	}
+  return result && result[0];
 }
 
 function getAccountReference(accountData) {
-	return accountData.ref ? accountData.ref.value.id : null;
+  return accountData.ref ? accountData.ref.value.id : null;
 }
 
 export default class App extends Component {
-	constructor() {
-		super();
+  constructor() {
+    super();
 
-		this.state = {
-			specimenData: {},
-			isLoading: false,
-		}
-	}
+    this.state = {
+      specimenData: {},
+      isLoading: false,
+    };
+  }
 
-	clearSpecimenStyling() {
-		if (typeof window !== "undefined") {
-			window.scrollTo(0, 0);
+  clearSpecimenStyling() {
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
 
-			const input = document.querySelector('#specimen-filter');
+      const input = document.querySelector('#specimen-filter');
 
-			if (input) {
-				input.value = '';
-			}
-		}
-	}
+      if (input) {
+        input.value = '';
+      }
+    }
+  }
 
-	/** Gets fired when the route changes.
-	 *	@param {Object} event	"change" event from [preact-router](http://git.io/preact-router)
-	 *	@param {string} event.url	The newly routed URL
-	 */
-	handleRoute = e => {
-		this.currentUrl = e.url;
+  /** Gets fired when the route changes.
+   *	@param {Object} event	"change" event from [preact-router](http://git.io/preact-router)
+   *	@param {string} event.url	The newly routed URL
+   */
+  handleRoute = e => {
+    this.currentUrl = e.url;
 
-		this.clearSpecimenStyling();
-	};
+    this.clearSpecimenStyling();
+  };
 
-	setLockScroll() {
-		document.body.style.top = `-${window.scrollY}px`;
-		document.body.style.position = 'fixed';
-	}
+  setLockScroll() {
+    document.body.style.top = `-${window.scrollY}px`;
+    document.body.style.position = 'fixed';
+  }
 
-	clearLockScroll() {
-		document.body.style.position = 'initial';
-		const scrollY = document.body.style.top;
-		document.body.style.top = '';
-		window.scrollTo(0, parseInt(scrollY || '0') * -1);
-	}
+  clearLockScroll() {
+    document.body.style.position = 'initial';
+    const scrollY = document.body.style.top;
+    document.body.style.top = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+  }
 
-	setModalStyling() {
-		this.setLockScroll();
-	}
+  setModalStyling() {
+    this.setLockScroll();
+  }
 
-	clearModalStyling() {
-		this.clearLockScroll();
-	}
+  clearModalStyling() {
+    this.clearLockScroll();
+  }
 
-	async setSpecimenData() {
-		const user = netlifyIdentity.currentUser();
+  async setSpecimenData() {
+    const user = netlifyIdentity.currentUser();
 
-		if (user) {
-			this.setState({ isLoading: true });
-			const data = await getSpecimenData(user.email);
-			this.setState({ specimenData: data }, () => this.setState({ isLoading: false }));
-		}
-	}
+    if (user) {
+      this.setState({ isLoading: true });
+      const data = await getSpecimenData(user.email);
+      this.setState({ specimenData: data }, () =>
+        this.setState({ isLoading: false })
+      );
+    }
+  }
 
-	handleLogin() {
-		netlifyIdentity.close();
-		this.setSpecimenData();
-	}
+  handleLogin() {
+    netlifyIdentity.close();
+    this.setSpecimenData();
+  }
 
-	handleLogout() {
-		this.setState({specimenData: {}});
-	}
+  handleLogout() {
+    this.setState({ specimenData: {} });
+  }
 
-	componentDidMount() {
-		netlifyIdentity.init();
+  componentDidMount() {
+    netlifyIdentity.init();
 
-		netlifyIdentity.on('open', () => this.setModalStyling());
-		netlifyIdentity.on('close', () => this.clearModalStyling());
+    netlifyIdentity.on('open', () => this.setModalStyling());
+    netlifyIdentity.on('close', () => this.clearModalStyling());
 
-		netlifyIdentity.on('login', () => this.handleLogin());
-		netlifyIdentity.on('logout', () => this.handleLogout());
+    netlifyIdentity.on('login', () => this.handleLogin());
+    netlifyIdentity.on('logout', () => this.handleLogout());
 
-		this.setSpecimenData();
-	}
+    this.setSpecimenData();
+  }
 
-	render() {
-		return (
-			<div id="app">
-				<Header />
-				<Router onChange={this.handleRoute}>
-					<Home path="/" />
-					<Tracker path="/tracker/:type" data={this.state.specimenData.data} accountRef={getAccountReference(this.state.specimenData)} isLoading={this.state.isLoading} />
-				</Router>
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div id="app">
+        <Header />
+        <Router onChange={this.handleRoute}>
+          <Home path="/" />
+          <Tracker
+            path="/tracker/:type"
+            data={this.state.specimenData.data}
+            accountRef={getAccountReference(this.state.specimenData)}
+            isLoading={this.state.isLoading}
+          />
+        </Router>
+      </div>
+    );
+  }
 }

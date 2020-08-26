@@ -8,16 +8,15 @@ import globalStyle from '../../routes/tracker/style.css';
 
 import saveCatchData from '../../fauna/save-catch-data';
 
-function filter() {
-  let input, filter, container, item, p, i, txtValue;
-  input = document.getElementById('specimen-filter');
-  filter = input.value.toUpperCase();
-  container = document.querySelector('.specimen-container');
-  item = container.getElementsByTagName('div');
+function filterSpecimen() {
+  const input = document.getElementById('specimen-filter');
+  const filter = input.value.toUpperCase();
+  const container = document.querySelector('.specimen-container');
+  const item = container.getElementsByTagName('div');
 
-  for (i = 0; i < item.length; i++) {
-    p = item[i].getElementsByTagName('p')[0];
-    txtValue = p.textContent || p.innerText;
+  for (let i = 0; i < item.length; i++) {
+    const p = item[i].getElementsByTagName('p')[0];
+    const txtValue = p.textContent || p.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
       item[i].style.display = '';
     } else {
@@ -27,18 +26,22 @@ function filter() {
 }
 
 function slugify(string) {
-  const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
-  const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------'
-  const p = new RegExp(a.split('').join('|'), 'g')
+  const a =
+    'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;';
+  const b =
+    'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------';
+  const p = new RegExp(a.split('').join('|'), 'g');
 
-  return string.toString().toLowerCase()
+  return string
+    .toString()
+    .toLowerCase()
     .replace(/\s+/g, '-') // Replace spaces with -
     .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
     .replace(/&/g, '-and-') // Replace & with 'and'
     .replace(/[^\w\-]+/g, '') // Remove all non-word characters
     .replace(/\-\-+/g, '-') // Replace multiple - with single -
     .replace(/^-+/, '') // Trim - from start of text
-    .replace(/-+$/, '') // Trim - from end of text
+    .replace(/-+$/, ''); // Trim - from end of text
 }
 
 function hasBeenCaught({ name, data }) {
@@ -47,12 +50,23 @@ function hasBeenCaught({ name, data }) {
   if (data) {
     return data[slug];
   }
+
+  return false;
 }
 
 function renderSpecimens(type, data, clickHandler) {
   return Specimens[type].map(specimen => {
     const isCaught = hasBeenCaught({ name: specimen.name, data: data[type] });
-    return <Specimen image={specimen.img} type={type} name={specimen.name} key={`${specimen.name}:${isCaught}`} caught={isCaught} clickHandler={clickHandler} />
+    return (
+      <Specimen
+        image={specimen.img}
+        type={type}
+        name={specimen.name}
+        key={`${specimen.name}:${isCaught}`}
+        caught={isCaught}
+        clickHandler={clickHandler}
+      />
+    );
   });
 }
 
@@ -110,7 +124,7 @@ export default class SpecimenContainer extends Component {
     if (data) {
       this.setState({ catchData: data[type], originalCatchData: data[type] }); // eslint-disable-line
     } else {
-      console.log('no data on componentDidMount');
+      console.log('no data on componentDidMount'); // eslint-disable-line
     }
   }
 
@@ -121,7 +135,10 @@ export default class SpecimenContainer extends Component {
 
     catchData[slugifiedName] = !isCaught;
 
-    this.setState({ catchData, enableSave: areObjectsDifferent(catchData, this.state.originalCatchData) });
+    this.setState({
+      catchData,
+      enableSave: areObjectsDifferent(catchData, this.state.originalCatchData),
+    });
   }
 
   async saveNewCatchData(data, accountRef, type) {
@@ -130,7 +147,12 @@ export default class SpecimenContainer extends Component {
     const result = await saveCatchData(data, accountRef, type);
 
     if (result.data) {
-      return this.setState({ originalCatchData: result.data[type], enableSave: false, showError: false, isSaving: false });
+      return this.setState({
+        originalCatchData: result.data[type],
+        enableSave: false,
+        showError: false,
+        isSaving: false,
+      });
     }
 
     return this.setState({ showError: true, isSaving: false });
@@ -144,9 +166,25 @@ export default class SpecimenContainer extends Component {
 
     return (
       <Fragment>
-        <button disabled={!enableSave} class={getSaveButtonClass(enableSave, isSaving)} onClick={() => this.saveNewCatchData(catchData, accountRef, type)}>{getSaveButtonContent(isSaving, enableSave)}</button>
-        {showError && <div class={style.error}>There was an error saving your catches - please check your network connection and then try again.</div>}
-        <input type="text" id="specimen-filter" placeholder={placeholder} onKeyUp={filter} />
+        <button
+          disabled={!enableSave}
+          class={getSaveButtonClass(enableSave, isSaving)}
+          onClick={() => this.saveNewCatchData(catchData, accountRef, type)}
+        >
+          {getSaveButtonContent(isSaving, enableSave)}
+        </button>
+        {showError && (
+          <div class={style.error}>
+            There was an error saving your catches - please check your network
+            connection and then try again.
+          </div>
+        )}
+        <input
+          type="text"
+          id="specimen-filter"
+          placeholder={placeholder}
+          onKeyUp={filterSpecimen}
+        />
         <div class={`${style.container} specimen-container`}>
           {renderSpecimens(type, data, this.clickHandler)}
         </div>

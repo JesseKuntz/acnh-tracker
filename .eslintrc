@@ -1,0 +1,70 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": "preact",
+  "ignorePatterns": [
+    "build/"
+  ],
+  "plugins": ["import", "node", "prettier"],
+  "rules": {
+    "no-var": "error",
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "any",
+        "ignoreReadBeforeAssign": true
+      }
+    ],
+    "prefer-arrow-callback": "error",
+    "getter-return": ["error", { "allowImplicit": true }],
+    "no-dupe-args": "error",
+    "no-dupe-keys": "error",
+    "no-duplicate-case": "error",
+    "no-dupe-class-members": "error",
+    "no-empty-character-class": "error",
+    "no-invalid-regexp": "error",
+    "no-debugger": "error",
+    "no-empty": "error",
+    "no-template-curly-in-string": "error",
+    "no-unreachable": "error",
+    "no-unexpected-multiline": "error",
+    "constructor-super": "error",
+    "no-this-before-super": "error",
+    "require-yield": "error",
+    "no-constant-condition": "error",
+    "no-console": "error",
+    "use-isnan": "error",
+    "no-compare-neg-zero": "off",
+    "no-unsafe-negation": "error",
+    "node/no-new-require": "error",
+    "no-new-symbol": "error",
+    "no-unsafe-finally": "error",
+    "eqeqeq": ["error", "always", { "null": "ignore" }],
+    "no-func-assign": "error",
+    "no-class-assign": "error",
+    "no-const-assign": "error",
+    "no-self-assign": "error",
+    "no-unused-vars": [
+      "error",
+      { "vars": "all", "args": "after-used", "ignoreRestSiblings": true }
+    ],
+    "no-use-before-define": [
+      "error",
+      { "functions": false, "classes": true, "variables": true }
+    ],
+    "no-undef": "error",
+    "no-shadow": "error",
+    "no-label-var": "error",
+    "no-delete-var": "error",
+    "no-catch-shadow": "off",
+    "no-ex-assign": "error",
+    "consistent-return": ["error", { "treatUndefinedAsUnspecified": true }],
+    "prettier/prettier": ["error", { "singleQuote": true, "arrowParens": "avoid" }],
+    "lines-around-directive": ["error", "always"],
+    "import/newline-after-import": "error",
+    "no-extra-semi": "error",
+    "object-shorthand": "error"
+  }
+}
