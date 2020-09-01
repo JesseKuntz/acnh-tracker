@@ -7,7 +7,10 @@ const specimens = {
         price: '900',
         location: 'River',
         time: 'All day',
-        months: ['January', 'February', 'March', 'November', 'December'],
+        months: {
+          northern: ['January', 'February', 'March', 'November', 'December'],
+          southern: ['May', 'June', 'July', 'August', 'September'],
+        },
       },
     },
     {
@@ -17,7 +20,7 @@ const specimens = {
         price: '200',
         location: 'River',
         time: '9 AM - 4 PM',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -27,7 +30,7 @@ const specimens = {
         price: '160',
         location: 'River',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -37,7 +40,7 @@ const specimens = {
         price: '240',
         location: 'River',
         time: '4 PM - 9 AM',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -47,7 +50,7 @@ const specimens = {
         price: '300',
         location: 'Pond',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -57,7 +60,7 @@ const specimens = {
         price: '4,000',
         location: 'Pond',
         time: '4 PM - 9 AM',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -67,7 +70,7 @@ const specimens = {
         price: '1,300',
         location: 'Pond',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -77,7 +80,7 @@ const specimens = {
         price: '1,300',
         location: 'Pond',
         time: '9 AM - 4 PM',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -87,7 +90,7 @@ const specimens = {
         price: '4,500',
         location: 'Pond',
         time: '9 AM - 4 PM',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -97,7 +100,10 @@ const specimens = {
         price: '300',
         location: 'Pond',
         time: 'All day',
-        months: ['April', 'May', 'June', 'July', 'August'],
+        months: {
+          northern: ['April', 'May', 'June', 'July', 'August'],
+          southern: ['January', 'February', 'October', 'November', 'December'],
+        },
       },
     },
     {
@@ -107,7 +113,17 @@ const specimens = {
         price: '200',
         location: 'Pond',
         time: 'All day',
-        months: ['April', 'May', 'June', 'July', 'August', 'September'],
+        months: {
+          northern: ['April', 'May', 'June', 'July', 'August', 'September'],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -117,7 +133,10 @@ const specimens = {
         price: '3,750',
         location: 'River',
         time: '4 PM - 9 AM',
-        months: ['August', 'September'],
+        months: {
+          northern: ['August', 'September'],
+          southern: ['February', 'March'],
+        },
       },
     },
     {
@@ -127,15 +146,26 @@ const specimens = {
         price: '5,000',
         location: 'River',
         time: '9 PM - 4 AM',
-        months: [
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-        ],
+        months: {
+          northern: [
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -145,7 +175,10 @@ const specimens = {
         price: '100',
         location: 'Pond',
         time: 'All day',
-        months: ['March', 'April', 'May', 'June', 'July'],
+        months: {
+          northern: ['March', 'April', 'May', 'June', 'July'],
+          southern: ['January', 'September', 'October', 'November', 'December'],
+        },
       },
     },
     {
@@ -155,7 +188,10 @@ const specimens = {
         price: '120',
         location: 'Pond',
         time: 'All day',
-        months: ['May', 'June', 'July', 'August'],
+        months: {
+          northern: ['May', 'June', 'July', 'August'],
+          southern: ['January', 'February', 'November', 'December'],
+        },
       },
     },
     {
@@ -165,7 +201,7 @@ const specimens = {
         price: '400',
         location: 'River',
         time: '4 PM - 9 AM',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -175,7 +211,10 @@ const specimens = {
         price: '400',
         location: 'River',
         time: 'All day',
-        months: ['March', 'April', 'May'],
+        months: {
+          northern: ['March', 'April', 'May'],
+          southern: ['September', 'October', 'November'],
+        },
       },
     },
     {
@@ -185,7 +224,17 @@ const specimens = {
         price: '800',
         location: 'Pond',
         time: '4 PM - 9 AM',
-        months: ['May', 'June', 'July', 'August', 'September', 'October'],
+        months: {
+          northern: ['May', 'June', 'July', 'August', 'September', 'October'],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -195,7 +244,10 @@ const specimens = {
         price: '5,500',
         location: 'Pond',
         time: '9 AM - 4 PM',
-        months: ['June', 'July', 'August'],
+        months: {
+          northern: ['June', 'July', 'August'],
+          southern: ['January', 'February', 'December'],
+        },
       },
     },
     {
@@ -205,7 +257,7 @@ const specimens = {
         price: '180',
         location: 'River',
         time: '9 AM - 4 PM',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -215,14 +267,17 @@ const specimens = {
         price: '300',
         location: 'River',
         time: 'All day',
-        months: [
-          'January',
-          'February',
-          'March',
-          'October',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'March',
+            'October',
+            'November',
+            'December',
+          ],
+          southern: ['April', 'May', 'June', 'July', 'August', 'September'],
+        },
       },
     },
     {
@@ -232,7 +287,7 @@ const specimens = {
         price: '400',
         location: 'River',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -242,7 +297,10 @@ const specimens = {
         price: '800',
         location: 'River',
         time: 'All day',
-        months: ['June', 'July', 'August', 'September', 'October'],
+        months: {
+          northern: ['June', 'July', 'August', 'September', 'October'],
+          southern: ['January', 'February', 'March', 'April', 'December'],
+        },
       },
     },
     {
@@ -252,7 +310,10 @@ const specimens = {
         price: '1,800',
         location: 'River',
         time: 'All day',
-        months: ['September', 'October', 'November', 'December'],
+        months: {
+          northern: ['September', 'October', 'November', 'December'],
+          southern: ['March', 'April', 'May', 'June'],
+        },
       },
     },
     {
@@ -262,7 +323,10 @@ const specimens = {
         price: '500',
         location: 'River',
         time: 'All day',
-        months: ['January', 'February', 'December'],
+        months: {
+          northern: ['January', 'February', 'December'],
+          southern: ['June', 'July', 'August'],
+        },
       },
     },
     {
@@ -272,7 +336,10 @@ const specimens = {
         price: '900',
         location: 'River',
         time: 'All day',
-        months: ['July', 'August', 'September'],
+        months: {
+          northern: ['July', 'August', 'September'],
+          southern: ['January', 'February', 'March'],
+        },
       },
     },
     {
@@ -282,15 +349,26 @@ const specimens = {
         price: '1,000',
         location: 'River (Clifftop)',
         time: '4 PM - 9 AM',
-        months: [
-          'March',
-          'April',
-          'May',
-          'June',
-          'September',
-          'October',
-          'November',
-        ],
+        months: {
+          northern: [
+            'March',
+            'April',
+            'May',
+            'June',
+            'September',
+            'October',
+            'November',
+          ],
+          southern: [
+            'March',
+            'April',
+            'May',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -300,15 +378,26 @@ const specimens = {
         price: '3,800',
         location: 'River (Clifftop) Pond',
         time: '4 PM - 9 AM',
-        months: [
-          'March',
-          'April',
-          'May',
-          'June',
-          'September',
-          'October',
-          'November',
-        ],
+        months: {
+          northern: [
+            'March',
+            'April',
+            'May',
+            'June',
+            'September',
+            'October',
+            'November',
+          ],
+          southern: [
+            'March',
+            'April',
+            'May',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -318,7 +407,24 @@ const specimens = {
         price: '15,000',
         location: 'River (Clifftop)',
         time: '4 PM - 9 AM',
-        months: ['March', 'April', 'May', 'September', 'October', 'November'],
+        months: {
+          northern: [
+            'March',
+            'April',
+            'May',
+            'September',
+            'October',
+            'November',
+          ],
+          southern: [
+            'March',
+            'April',
+            'May',
+            'September',
+            'October',
+            'November',
+          ],
+        },
       },
     },
     {
@@ -328,7 +434,10 @@ const specimens = {
         price: '15,000',
         location: 'River (Clifftop)',
         time: '4 PM - 9 AM',
-        months: ['January', 'February', 'March', 'December'],
+        months: {
+          northern: ['January', 'February', 'March', 'December'],
+          southern: ['June', 'July', 'August', 'September'],
+        },
       },
     },
     {
@@ -338,7 +447,7 @@ const specimens = {
         price: '700',
         location: 'River (Mouth)',
         time: 'All day',
-        months: ['September'],
+        months: { northern: ['September'], southern: ['March'] },
       },
     },
     {
@@ -348,7 +457,7 @@ const specimens = {
         price: '1,800',
         location: 'River (Mouth)',
         time: 'All day',
-        months: ['September'],
+        months: { northern: ['September'], southern: ['March'] },
       },
     },
     {
@@ -358,7 +467,10 @@ const specimens = {
         price: '2,000',
         location: 'River',
         time: '4 PM - 9 AM',
-        months: ['September', 'October', 'November'],
+        months: {
+          northern: ['September', 'October', 'November'],
+          southern: ['March', 'April', 'May'],
+        },
       },
     },
     {
@@ -368,16 +480,28 @@ const specimens = {
         price: '1,300',
         location: 'River',
         time: '9 AM - 4 PM',
-        months: [
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-          'November',
-        ],
+        months: {
+          northern: [
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -387,7 +511,10 @@ const specimens = {
         price: '1,500',
         location: 'River',
         time: '9 AM - 4 PM',
-        months: ['May', 'June', 'July', 'August', 'September'],
+        months: {
+          northern: ['May', 'June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'November', 'December'],
+        },
       },
     },
     {
@@ -397,7 +524,17 @@ const specimens = {
         price: '3,000',
         location: 'River',
         time: '4 PM - 9 AM',
-        months: ['May', 'June', 'July', 'August', 'September', 'October'],
+        months: {
+          northern: ['May', 'June', 'July', 'August', 'September', 'October'],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -407,7 +544,17 @@ const specimens = {
         price: '2,500',
         location: 'River',
         time: '9 AM - 4 PM',
-        months: ['May', 'June', 'July', 'August', 'September', 'October'],
+        months: {
+          northern: ['May', 'June', 'July', 'August', 'September', 'October'],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -417,16 +564,28 @@ const specimens = {
         price: '500',
         location: 'River',
         time: '9 AM - 4 PM',
-        months: [
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-          'November',
-        ],
+        months: {
+          northern: [
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -436,7 +595,17 @@ const specimens = {
         price: '800',
         location: 'River',
         time: '9 AM - 4 PM',
-        months: ['May', 'June', 'July', 'August', 'September', 'October'],
+        months: {
+          northern: ['May', 'June', 'July', 'August', 'September', 'October'],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -446,7 +615,10 @@ const specimens = {
         price: '2,500',
         location: 'River',
         time: '9 AM - 4 PM & 9 PM - 4 AM',
-        months: ['June', 'July', 'August', 'September'],
+        months: {
+          northern: ['June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'December'],
+        },
       },
     },
     {
@@ -456,7 +628,10 @@ const specimens = {
         price: '10,000',
         location: 'River',
         time: '4 PM - 9 AM',
-        months: ['June', 'July', 'August', 'September'],
+        months: {
+          northern: ['June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'December'],
+        },
       },
     },
     {
@@ -466,7 +641,10 @@ const specimens = {
         price: '15,000',
         location: 'River',
         time: '4 AM - 9 PM',
-        months: ['June', 'July', 'August', 'September'],
+        months: {
+          northern: ['June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'December'],
+        },
       },
     },
     {
@@ -476,7 +654,10 @@ const specimens = {
         price: '6,000',
         location: 'Pond',
         time: '4 PM - 9 AM',
-        months: ['June', 'July', 'August', 'September'],
+        months: {
+          northern: ['June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'December'],
+        },
       },
     },
     {
@@ -486,7 +667,10 @@ const specimens = {
         price: '10,000',
         location: 'River',
         time: '4 PM - 9 AM',
-        months: ['June', 'July', 'August', 'September'],
+        months: {
+          northern: ['June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'December'],
+        },
       },
     },
     {
@@ -496,7 +680,10 @@ const specimens = {
         price: '4,000',
         location: 'River',
         time: '9 PM - 4 AM',
-        months: ['June', 'July', 'August', 'September'],
+        months: {
+          northern: ['June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'December'],
+        },
       },
     },
     {
@@ -506,15 +693,26 @@ const specimens = {
         price: '10,000',
         location: 'River (Mouth)',
         time: 'All day',
-        months: [
-          'January',
-          'February',
-          'March',
-          'September',
-          'October',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'March',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+          southern: [
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+          ],
+        },
       },
     },
     {
@@ -524,7 +722,10 @@ const specimens = {
         price: '1,000',
         location: 'Sea',
         time: 'All day',
-        months: ['January', 'February', 'March', 'December'],
+        months: {
+          northern: ['January', 'February', 'March', 'December'],
+          southern: ['June', 'July', 'August', 'September'],
+        },
       },
     },
     {
@@ -534,16 +735,28 @@ const specimens = {
         price: '1,100',
         location: 'Sea',
         time: 'All day',
-        months: [
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-          'November',
-        ],
+        months: {
+          northern: [
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -553,7 +766,17 @@ const specimens = {
         price: '650',
         location: 'Sea',
         time: 'All day',
-        months: ['April', 'May', 'June', 'July', 'August', 'September'],
+        months: {
+          northern: ['April', 'May', 'June', 'July', 'August', 'September'],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -563,7 +786,17 @@ const specimens = {
         price: '1,000',
         location: 'Sea',
         time: 'All day',
-        months: ['April', 'May', 'June', 'July', 'August', 'September'],
+        months: {
+          northern: ['April', 'May', 'June', 'July', 'August', 'September'],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -573,7 +806,17 @@ const specimens = {
         price: '1,000',
         location: 'Sea',
         time: 'All day',
-        months: ['April', 'May', 'June', 'July', 'August', 'September'],
+        months: {
+          northern: ['April', 'May', 'June', 'July', 'August', 'September'],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -583,7 +826,10 @@ const specimens = {
         price: '10,000',
         location: 'Sea',
         time: '4 AM - 9 PM',
-        months: ['July', 'August'],
+        months: {
+          northern: ['July', 'August'],
+          southern: ['January', 'February'],
+        },
       },
     },
     {
@@ -593,16 +839,28 @@ const specimens = {
         price: '500',
         location: 'Sea',
         time: 'All day',
-        months: [
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-          'November',
-        ],
+        months: {
+          northern: [
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -612,7 +870,10 @@ const specimens = {
         price: '5,000',
         location: 'Sea',
         time: '9 PM - 4 AM',
-        months: ['January', 'February', 'November', 'December'],
+        months: {
+          northern: ['January', 'February', 'November', 'December'],
+          southern: ['May', 'June', 'July', 'August'],
+        },
       },
     },
     {
@@ -622,7 +883,10 @@ const specimens = {
         price: '250',
         location: 'Sea',
         time: 'All day',
-        months: ['July', 'August', 'September'],
+        months: {
+          northern: ['July', 'August', 'September'],
+          southern: ['January', 'February', 'March'],
+        },
       },
     },
     {
@@ -632,7 +896,7 @@ const specimens = {
         price: '200',
         location: 'Sea',
         time: '4 AM - 9 PM',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -642,7 +906,7 @@ const specimens = {
         price: '150',
         location: 'Sea',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -652,17 +916,30 @@ const specimens = {
         price: '5,000',
         location: 'Sea',
         time: 'All day',
-        months: [
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-          'November',
-        ],
+        months: {
+          northern: [
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -672,7 +949,7 @@ const specimens = {
         price: '400',
         location: 'Sea',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -682,7 +959,7 @@ const specimens = {
         price: '3,000',
         location: 'Sea',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -692,15 +969,26 @@ const specimens = {
         price: '300',
         location: 'Sea',
         time: 'All day',
-        months: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'October',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'October',
+            'November',
+            'December',
+          ],
+          southern: [
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+          ],
+        },
       },
     },
     {
@@ -710,7 +998,7 @@ const specimens = {
         price: '800',
         location: 'Sea',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -720,17 +1008,30 @@ const specimens = {
         price: '500',
         location: 'Sea',
         time: 'All day',
-        months: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'December',
+          ],
+          southern: [
+            'January',
+            'February',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -740,7 +1041,10 @@ const specimens = {
         price: '2,000',
         location: 'Sea',
         time: 'All day',
-        months: ['August', 'September', 'October'],
+        months: {
+          northern: ['August', 'September', 'October'],
+          southern: ['February', 'March', 'April'],
+        },
       },
     },
     {
@@ -750,7 +1054,10 @@ const specimens = {
         price: '600',
         location: 'Sea',
         time: 'All day',
-        months: ['June', 'July', 'August', 'September', 'October'],
+        months: {
+          northern: ['June', 'July', 'August', 'September', 'October'],
+          southern: ['January', 'February', 'March', 'April', 'December'],
+        },
       },
     },
     {
@@ -760,14 +1067,17 @@ const specimens = {
         price: '7,000',
         location: 'Pier',
         time: 'All day',
-        months: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'November',
+            'December',
+          ],
+          southern: ['May', 'June', 'July', 'August', 'September', 'October'],
+        },
       },
     },
     {
@@ -777,17 +1087,30 @@ const specimens = {
         price: '10,000',
         location: 'Pier',
         time: 'All day',
-        months: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'July',
-          'August',
-          'September',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'July',
+            'August',
+            'September',
+            'November',
+            'December',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+          ],
+        },
       },
     },
     {
@@ -797,7 +1120,17 @@ const specimens = {
         price: '4,500',
         location: 'Pier',
         time: 'All day',
-        months: ['May', 'June', 'July', 'August', 'September', 'October'],
+        months: {
+          northern: ['May', 'June', 'July', 'August', 'September', 'October'],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -807,7 +1140,17 @@ const specimens = {
         price: '6,000',
         location: 'Pier',
         time: 'All day',
-        months: ['May', 'June', 'July', 'August', 'September', 'October'],
+        months: {
+          northern: ['May', 'June', 'July', 'August', 'September', 'October'],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -817,7 +1160,10 @@ const specimens = {
         price: '4,000',
         location: 'Sea',
         time: '4 AM - 9 PM',
-        months: ['July', 'August', 'September'],
+        months: {
+          northern: ['July', 'August', 'September'],
+          southern: ['January', 'February', 'March'],
+        },
       },
     },
     {
@@ -827,7 +1173,10 @@ const specimens = {
         price: '3,000',
         location: 'Sea',
         time: '4 AM - 9 PM',
-        months: ['August', 'September', 'October', 'November'],
+        months: {
+          northern: ['August', 'September', 'October', 'November'],
+          southern: ['February', 'March', 'April', 'May'],
+        },
       },
     },
     {
@@ -837,7 +1186,10 @@ const specimens = {
         price: '12,000',
         location: 'Sea',
         time: '4 PM - 9 AM',
-        months: ['June', 'July', 'August', 'September'],
+        months: {
+          northern: ['June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'December'],
+        },
       },
     },
     {
@@ -847,7 +1199,10 @@ const specimens = {
         price: '8,000',
         location: 'Sea',
         time: '4 PM - 9 AM',
-        months: ['June', 'July', 'August', 'September'],
+        months: {
+          northern: ['June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'December'],
+        },
       },
     },
     {
@@ -857,7 +1212,10 @@ const specimens = {
         price: '15,000',
         location: 'Sea',
         time: '4 PM - 9 AM',
-        months: ['June', 'July', 'August', 'September'],
+        months: {
+          northern: ['June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'December'],
+        },
       },
     },
     {
@@ -867,7 +1225,10 @@ const specimens = {
         price: '13,000',
         location: 'Sea',
         time: 'All day',
-        months: ['June', 'July', 'August', 'September'],
+        months: {
+          northern: ['June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'December'],
+        },
       },
     },
     {
@@ -877,7 +1238,10 @@ const specimens = {
         price: '1,500',
         location: 'Sea',
         time: 'All day',
-        months: ['June', 'July', 'August', 'September'],
+        months: {
+          northern: ['June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'December'],
+        },
       },
     },
     {
@@ -887,7 +1251,10 @@ const specimens = {
         price: '2,500',
         location: 'Sea',
         time: '4 PM - 9 AM',
-        months: ['January', 'February', 'March', 'November', 'December'],
+        months: {
+          northern: ['January', 'February', 'March', 'November', 'December'],
+          southern: ['May', 'June', 'July', 'August', 'September'],
+        },
       },
     },
     {
@@ -897,7 +1264,24 @@ const specimens = {
         price: '9,000',
         location: 'Sea',
         time: 'All day',
-        months: ['January', 'February', 'March', 'April', 'May', 'December'],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'December',
+          ],
+          southern: [
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+          ],
+        },
       },
     },
     {
@@ -907,7 +1291,7 @@ const specimens = {
         price: '15,000',
         location: 'Sea',
         time: '9 PM - 4 AM',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -917,7 +1301,7 @@ const specimens = {
         price: '15,000',
         location: 'Sea',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
   ],
@@ -929,18 +1313,32 @@ const specimens = {
         price: '160',
         location: 'Flying',
         time: '4 AM - 7 PM',
-        months: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
-          'September',
-          'October',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+          southern: [
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -950,7 +1348,17 @@ const specimens = {
         price: '160',
         location: 'Flying',
         time: '4 AM - 7 PM',
-        months: ['March', 'April', 'May', 'June', 'September', 'October'],
+        months: {
+          northern: ['March', 'April', 'May', 'June', 'September', 'October'],
+          southern: [
+            'March',
+            'April',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -960,15 +1368,26 @@ const specimens = {
         price: '240',
         location: 'Flying',
         time: '4 AM - 7 PM',
-        months: [
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-        ],
+        months: {
+          northern: [
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -978,7 +1397,10 @@ const specimens = {
         price: '2,500',
         location: 'Flying by Hybrid Flowers',
         time: '4 AM - 7 PM',
-        months: ['March', 'April', 'May', 'June'],
+        months: {
+          northern: ['March', 'April', 'May', 'June'],
+          southern: ['September', 'October', 'November', 'December'],
+        },
       },
     },
     {
@@ -988,7 +1410,10 @@ const specimens = {
         price: '300',
         location: 'Flying',
         time: '4 AM - 7 PM',
-        months: ['April', 'May', 'June', 'July', 'August'],
+        months: {
+          northern: ['April', 'May', 'June', 'July', 'August'],
+          southern: ['January', 'February', 'October', 'November', 'December'],
+        },
       },
     },
     {
@@ -998,7 +1423,7 @@ const specimens = {
         price: '1,000',
         location: 'Flying',
         time: '8 AM - 7 PM',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -1008,7 +1433,10 @@ const specimens = {
         price: '3,000',
         location: 'Flying',
         time: '4 AM - 7 PM',
-        months: ['May', 'June', 'July', 'August'],
+        months: {
+          northern: ['May', 'June', 'July', 'August'],
+          southern: ['January', 'February', 'November', 'December'],
+        },
       },
     },
     {
@@ -1018,7 +1446,10 @@ const specimens = {
         price: '140',
         location: 'Flying',
         time: '4 AM - 5 PM',
-        months: ['September', 'October', 'November'],
+        months: {
+          northern: ['September', 'October', 'November'],
+          southern: ['March', 'April', 'May'],
+        },
       },
     },
     {
@@ -1028,16 +1459,28 @@ const specimens = {
         price: '4,000',
         location: 'Flying',
         time: '5 PM - 8 AM',
-        months: [
-          'January',
-          'February',
-          'March',
-          'June',
-          'July',
-          'August',
-          'September',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'March',
+            'June',
+            'July',
+            'August',
+            'September',
+            'December',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'June',
+            'July',
+            'August',
+            'September',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -1047,7 +1490,17 @@ const specimens = {
         price: '3,000',
         location: 'Flying',
         time: '8 AM - 5 PM',
-        months: ['April', 'May', 'June', 'July', 'August', 'September'],
+        months: {
+          northern: ['April', 'May', 'June', 'July', 'August', 'September'],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -1057,17 +1510,30 @@ const specimens = {
         price: '2,500',
         location: 'Flying',
         time: '8 AM - 5 PM',
-        months: [
-          'January',
-          'February',
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'December',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'June',
+            'July',
+            'August',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -1077,7 +1543,10 @@ const specimens = {
         price: '4,000',
         location: 'Flying',
         time: '8 AM - 4 PM',
-        months: ['May', 'June', 'July', 'August', 'September'],
+        months: {
+          northern: ['May', 'June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'November', 'December'],
+        },
       },
     },
     {
@@ -1087,7 +1556,7 @@ const specimens = {
         price: '130',
         location: 'Flying by Light',
         time: '7 PM - 4 AM',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -1097,7 +1566,17 @@ const specimens = {
         price: '3,000',
         location: 'On Trees',
         time: '7 PM - 4 AM',
-        months: ['April', 'May', 'June', 'July', 'August', 'September'],
+        months: {
+          northern: ['April', 'May', 'June', 'July', 'August', 'September'],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -1107,7 +1586,17 @@ const specimens = {
         price: '2,500',
         location: 'Flying',
         time: '8 AM - 4 PM',
-        months: ['April', 'May', 'June', 'July', 'August', 'September'],
+        months: {
+          northern: ['April', 'May', 'June', 'July', 'August', 'September'],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -1117,16 +1606,28 @@ const specimens = {
         price: '200',
         location: 'On the Ground',
         time: '8 AM - 7 PM',
-        months: [
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-          'November',
-        ],
+        months: {
+          northern: [
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -1136,7 +1637,10 @@ const specimens = {
         price: '600',
         location: 'On the Ground',
         time: '8 AM - 7 PM',
-        months: ['August', 'September', 'October', 'November'],
+        months: {
+          northern: ['August', 'September', 'October', 'November'],
+          southern: ['February', 'March', 'April', 'May'],
+        },
       },
     },
     {
@@ -1146,7 +1650,10 @@ const specimens = {
         price: '160',
         location: 'On the Ground',
         time: '8 AM - 7 PM',
-        months: ['August', 'September', 'October', 'November'],
+        months: {
+          northern: ['August', 'September', 'October', 'November'],
+          southern: ['February', 'March', 'April', 'May'],
+        },
       },
     },
     {
@@ -1156,7 +1663,10 @@ const specimens = {
         price: '160',
         location: 'On the Ground',
         time: '8 AM - 5 PM',
-        months: ['July', 'August', 'September'],
+        months: {
+          northern: ['July', 'August', 'September'],
+          southern: ['January', 'February', 'March'],
+        },
       },
     },
     {
@@ -1166,7 +1676,10 @@ const specimens = {
         price: '130',
         location: 'On the Ground',
         time: '5 PM - 8 AM',
-        months: ['September', 'October', 'November'],
+        months: {
+          northern: ['September', 'October', 'November'],
+          southern: ['March', 'April', 'May'],
+        },
       },
     },
     {
@@ -1176,7 +1689,10 @@ const specimens = {
         price: '430',
         location: 'On the Ground',
         time: '5 PM - 8 AM',
-        months: ['September', 'October'],
+        months: {
+          northern: ['September', 'October'],
+          southern: ['March', 'April'],
+        },
       },
     },
     {
@@ -1186,17 +1702,30 @@ const specimens = {
         price: '430',
         location: 'On Flowers',
         time: '8 AM - 5 PM',
-        months: [
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-          'November',
-        ],
+        months: {
+          northern: [
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -1206,17 +1735,30 @@ const specimens = {
         price: '2,400',
         location: 'On Flowers (White)',
         time: '8 AM - 5 PM',
-        months: [
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-          'November',
-        ],
+        months: {
+          northern: [
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -1226,7 +1768,10 @@ const specimens = {
         price: '200',
         location: 'Flying',
         time: '8 AM - 5 PM',
-        months: ['March', 'April', 'May', 'June', 'July'],
+        months: {
+          northern: ['March', 'April', 'May', 'June', 'July'],
+          southern: ['January', 'September', 'October', 'November', 'December'],
+        },
       },
     },
     {
@@ -1236,7 +1781,7 @@ const specimens = {
         price: '2,500',
         location: 'Shaking Trees',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -1246,7 +1791,10 @@ const specimens = {
         price: '250',
         location: 'On Trees',
         time: '8 AM - 5 PM',
-        months: ['July', 'August'],
+        months: {
+          northern: ['July', 'August'],
+          southern: ['January', 'February'],
+        },
       },
     },
     {
@@ -1256,7 +1804,10 @@ const specimens = {
         price: '300',
         location: 'On Trees',
         time: '8 AM - 5 PM',
-        months: ['July', 'August'],
+        months: {
+          northern: ['July', 'August'],
+          southern: ['January', 'February'],
+        },
       },
     },
     {
@@ -1266,7 +1817,10 @@ const specimens = {
         price: '500',
         location: 'On Trees',
         time: '8 AM - 5 PM',
-        months: ['July', 'August'],
+        months: {
+          northern: ['July', 'August'],
+          southern: ['January', 'February'],
+        },
       },
     },
     {
@@ -1276,7 +1830,10 @@ const specimens = {
         price: '400',
         location: 'On Trees',
         time: '8 AM - 5 PM',
-        months: ['August', 'September'],
+        months: {
+          northern: ['August', 'September'],
+          southern: ['February', 'March'],
+        },
       },
     },
     {
@@ -1286,7 +1843,10 @@ const specimens = {
         price: '550',
         location: 'On Trees',
         time: '4 AM - 8 AM & 4 PM - 7 PM',
-        months: ['July', 'August'],
+        months: {
+          northern: ['July', 'August'],
+          southern: ['January', 'February'],
+        },
       },
     },
     {
@@ -1296,7 +1856,10 @@ const specimens = {
         price: '10',
         location: 'On Trees',
         time: 'All day',
-        months: ['July', 'August'],
+        months: {
+          northern: ['July', 'August'],
+          southern: ['January', 'February'],
+        },
       },
     },
     {
@@ -1306,7 +1869,10 @@ const specimens = {
         price: '180',
         location: 'Flying',
         time: '8 AM - 7 PM',
-        months: ['September', 'October'],
+        months: {
+          northern: ['September', 'October'],
+          southern: ['March', 'April'],
+        },
       },
     },
     {
@@ -1316,15 +1882,26 @@ const specimens = {
         price: '230',
         location: 'Flying',
         time: '8 AM - 5 PM',
-        months: [
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-        ],
+        months: {
+          northern: [
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -1334,7 +1911,17 @@ const specimens = {
         price: '4,500',
         location: 'Flying',
         time: '8 AM - 5 PM',
-        months: ['May', 'June', 'July', 'August', 'September', 'October'],
+        months: {
+          northern: ['May', 'June', 'July', 'August', 'September', 'October'],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -1344,7 +1931,10 @@ const specimens = {
         price: '500',
         location: 'Flying',
         time: 'All day',
-        months: ['January', 'February', 'November', 'December'],
+        months: {
+          northern: ['January', 'February', 'November', 'December'],
+          southern: ['May', 'June', 'July', 'August'],
+        },
       },
     },
     {
@@ -1354,7 +1944,7 @@ const specimens = {
         price: '300',
         location: 'Flying',
         time: '7 PM - 4 AM',
-        months: ['June'],
+        months: { northern: ['June'], southern: ['December'] },
       },
     },
     {
@@ -1364,15 +1954,26 @@ const specimens = {
         price: '500',
         location: 'Underground',
         time: 'All day',
-        months: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'November',
+            'December',
+          ],
+          southern: [
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+          ],
+        },
       },
     },
     {
@@ -1382,7 +1983,10 @@ const specimens = {
         price: '130',
         location: 'On Ponds and Rivers',
         time: '8 AM - 7 PM',
-        months: ['May', 'June', 'July', 'August', 'September'],
+        months: {
+          northern: ['May', 'June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'November', 'December'],
+        },
       },
     },
     {
@@ -1392,7 +1996,10 @@ const specimens = {
         price: '800',
         location: 'On Ponds and Rivers',
         time: '8 AM - 7 PM',
-        months: ['May', 'June', 'July', 'August', 'September'],
+        months: {
+          northern: ['May', 'June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'November', 'December'],
+        },
       },
     },
     {
@@ -1402,7 +2009,17 @@ const specimens = {
         price: '2,000',
         location: 'On Ponds and Rivers',
         time: '7 PM - 8 AM',
-        months: ['April', 'May', 'June', 'July', 'August', 'September'],
+        months: {
+          northern: ['April', 'May', 'June', 'July', 'August', 'September'],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -1412,16 +2029,28 @@ const specimens = {
         price: '120',
         location: 'On Flowers',
         time: 'All day',
-        months: [
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-        ],
+        months: {
+          northern: [
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -1431,16 +2060,28 @@ const specimens = {
         price: '1,000',
         location: 'On Flowers',
         time: '7 PM - 8 AM',
-        months: [
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-        ],
+        months: {
+          northern: [
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -1450,7 +2091,10 @@ const specimens = {
         price: '200',
         location: 'On Flowers',
         time: '8 AM - 5 PM',
-        months: ['March', 'April', 'May', 'June', 'October'],
+        months: {
+          northern: ['March', 'April', 'May', 'June', 'October'],
+          southern: ['April', 'September', 'October', 'November', 'December'],
+        },
       },
     },
     {
@@ -1460,17 +2104,30 @@ const specimens = {
         price: '1,500',
         location: 'On the Ground',
         time: 'All day',
-        months: [
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-        ],
+        months: {
+          northern: [
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -1480,7 +2137,10 @@ const specimens = {
         price: '2,400',
         location: 'On Tree Stumps',
         time: 'All day',
-        months: ['April', 'May', 'June', 'July', 'August'],
+        months: {
+          northern: ['April', 'May', 'June', 'July', 'August'],
+          southern: ['January', 'February', 'October', 'November', 'December'],
+        },
       },
     },
     {
@@ -1490,7 +2150,10 @@ const specimens = {
         price: '450',
         location: 'On Tree Stumps',
         time: 'All day',
-        months: ['May', 'June', 'September', 'October', 'November'],
+        months: {
+          northern: ['May', 'June', 'September', 'October', 'November'],
+          southern: ['March', 'April', 'May', 'November', 'December'],
+        },
       },
     },
     {
@@ -1500,7 +2163,7 @@ const specimens = {
         price: '350',
         location: 'On Tree Stumps',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -1510,7 +2173,10 @@ const specimens = {
         price: '3,000',
         location: 'On Tree Stumps',
         time: 'All day',
-        months: ['May', 'June', 'July', 'August', 'September'],
+        months: {
+          northern: ['May', 'June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'November', 'December'],
+        },
       },
     },
     {
@@ -1520,7 +2186,10 @@ const specimens = {
         price: '800',
         location: 'On Trees (Coconut)',
         time: 'All day',
-        months: ['July', 'August'],
+        months: {
+          northern: ['July', 'August'],
+          southern: ['January', 'February'],
+        },
       },
     },
     {
@@ -1530,7 +2199,10 @@ const specimens = {
         price: '3,000',
         location: 'On the Ground (rolling snowballs)',
         time: 'All day',
-        months: ['January', 'February', 'December'],
+        months: {
+          northern: ['January', 'February', 'December'],
+          southern: ['June', 'July', 'August'],
+        },
       },
     },
     {
@@ -1540,7 +2212,10 @@ const specimens = {
         price: '300',
         location: 'On the Ground',
         time: 'All day',
-        months: ['July', 'August', 'September'],
+        months: {
+          northern: ['July', 'August', 'September'],
+          southern: ['January', 'February', 'March'],
+        },
       },
     },
     {
@@ -1550,7 +2225,10 @@ const specimens = {
         price: '10,000',
         location: 'On Trees',
         time: '11 PM - 8 AM',
-        months: ['July', 'August'],
+        months: {
+          northern: ['July', 'August'],
+          southern: ['January', 'February'],
+        },
       },
     },
     {
@@ -1560,7 +2238,10 @@ const specimens = {
         price: '200',
         location: 'On Trees',
         time: 'All day',
-        months: ['June', 'July', 'August'],
+        months: {
+          northern: ['June', 'July', 'August'],
+          southern: ['January', 'February', 'December'],
+        },
       },
     },
     {
@@ -1570,7 +2251,10 @@ const specimens = {
         price: '8,000',
         location: 'On Trees (Coconut)',
         time: '5 PM - 8 AM',
-        months: ['June', 'July', 'August', 'September'],
+        months: {
+          northern: ['June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'December'],
+        },
       },
     },
     {
@@ -1580,7 +2264,10 @@ const specimens = {
         price: '2,000',
         location: 'On Trees',
         time: 'All day',
-        months: ['July', 'August'],
+        months: {
+          northern: ['July', 'August'],
+          southern: ['January', 'February'],
+        },
       },
     },
     {
@@ -1590,7 +2277,10 @@ const specimens = {
         price: '1,000',
         location: 'On Trees',
         time: 'All day',
-        months: ['July', 'August'],
+        months: {
+          northern: ['July', 'August'],
+          southern: ['January', 'February'],
+        },
       },
     },
     {
@@ -1600,7 +2290,10 @@ const specimens = {
         price: '10,000',
         location: 'On Trees',
         time: '11 PM - 8 AM',
-        months: ['July', 'August'],
+        months: {
+          northern: ['July', 'August'],
+          southern: ['January', 'February'],
+        },
       },
     },
     {
@@ -1610,7 +2303,10 @@ const specimens = {
         price: '6,000',
         location: 'On Trees',
         time: '7 PM - 8 AM',
-        months: ['June', 'July', 'August', 'September'],
+        months: {
+          northern: ['June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'December'],
+        },
       },
     },
     {
@@ -1620,7 +2316,10 @@ const specimens = {
         price: '8,000',
         location: 'On Trees (Coconut)',
         time: '5 PM - 8 AM',
-        months: ['July', 'August'],
+        months: {
+          northern: ['July', 'August'],
+          southern: ['January', 'February'],
+        },
       },
     },
     {
@@ -1630,7 +2329,10 @@ const specimens = {
         price: '12,000',
         location: 'On Trees (Coconut)',
         time: '5 PM - 8 AM',
-        months: ['July', 'August'],
+        months: {
+          northern: ['July', 'August'],
+          southern: ['January', 'February'],
+        },
       },
     },
     {
@@ -1640,7 +2342,10 @@ const specimens = {
         price: '12,000',
         location: 'On Trees (Coconut)',
         time: '5 PM - 8 AM',
-        months: ['July', 'August'],
+        months: {
+          northern: ['July', 'August'],
+          southern: ['January', 'February'],
+        },
       },
     },
     {
@@ -1650,7 +2355,10 @@ const specimens = {
         price: '1,350',
         location: 'On Trees',
         time: '5 PM - 8 AM',
-        months: ['July', 'August'],
+        months: {
+          northern: ['July', 'August'],
+          southern: ['January', 'February'],
+        },
       },
     },
     {
@@ -1660,7 +2368,10 @@ const specimens = {
         price: '8,000',
         location: 'On Trees (Coconut)',
         time: '5 PM - 8 AM',
-        months: ['July', 'August'],
+        months: {
+          northern: ['July', 'August'],
+          southern: ['January', 'February'],
+        },
       },
     },
     {
@@ -1670,7 +2381,10 @@ const specimens = {
         price: '8,000',
         location: 'On Trees (Coconut)',
         time: '5 PM - 8 AM',
-        months: ['July', 'August'],
+        months: {
+          northern: ['July', 'August'],
+          southern: ['January', 'February'],
+        },
       },
     },
     {
@@ -1680,7 +2394,10 @@ const specimens = {
         price: '12,000',
         location: 'On Trees (Coconut)',
         time: '5 PM - 8 AM',
-        months: ['July', 'August'],
+        months: {
+          northern: ['July', 'August'],
+          southern: ['January', 'February'],
+        },
       },
     },
     {
@@ -1690,7 +2407,10 @@ const specimens = {
         price: '600',
         location: 'On Trees',
         time: '4 AM - 8 AM & 5 PM - 7 PM',
-        months: ['July', 'August', 'September', 'October', 'November'],
+        months: {
+          northern: ['July', 'August', 'September', 'October', 'November'],
+          southern: ['January', 'February', 'March', 'April', 'May'],
+        },
       },
     },
     {
@@ -1700,7 +2420,10 @@ const specimens = {
         price: '600',
         location: 'Under Trees Disguised as Leaves',
         time: 'All day',
-        months: ['July', 'August', 'September'],
+        months: {
+          northern: ['July', 'August', 'September'],
+          southern: ['January', 'February', 'March'],
+        },
       },
     },
     {
@@ -1710,7 +2433,7 @@ const specimens = {
         price: '600',
         location: 'Shaking Trees',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -1720,7 +2443,7 @@ const specimens = {
         price: '80',
         location: 'On rotten food',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -1730,7 +2453,7 @@ const specimens = {
         price: '1,000',
         location: 'Beach disguised as Shells',
         time: '7 PM - 8 AM',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -1740,7 +2463,7 @@ const specimens = {
         price: '200',
         location: 'On Beach Rocks',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -1750,7 +2473,7 @@ const specimens = {
         price: '60',
         location: 'On Trash Items',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -1760,7 +2483,10 @@ const specimens = {
         price: '130',
         location: 'Flying',
         time: '5 PM - 4 AM',
-        months: ['June', 'July', 'August', 'September'],
+        months: {
+          northern: ['June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'December'],
+        },
       },
     },
     {
@@ -1770,16 +2496,28 @@ const specimens = {
         price: '70',
         location: "Villager's Heads",
         time: 'All day',
-        months: [
-          'April',
-          'May',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-          'November',
-        ],
+        months: {
+          northern: [
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -1789,7 +2527,7 @@ const specimens = {
         price: '250',
         location: 'On Rocks and Bushes (Rain)',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -1799,18 +2537,32 @@ const specimens = {
         price: '250',
         location: 'Hitting Rocks',
         time: '11 PM - 4 PM',
-        months: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
-          'September',
-          'October',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+          southern: [
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -1820,18 +2572,32 @@ const specimens = {
         price: '300',
         location: 'Hitting Rocks',
         time: '4 PM - 11 PM',
-        months: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
-          'September',
-          'October',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+          southern: [
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -1841,7 +2607,7 @@ const specimens = {
         price: '600',
         location: 'Shaking Trees',
         time: '7 PM - 8 AM',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -1851,14 +2617,17 @@ const specimens = {
         price: '8,000',
         location: 'On the Ground',
         time: '7 PM - 4 AM',
-        months: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'November',
+            'December',
+          ],
+          southern: ['May', 'June', 'July', 'August', 'September', 'October'],
+        },
       },
     },
     {
@@ -1868,7 +2637,17 @@ const specimens = {
         price: '8,000',
         location: 'On the Ground',
         time: '7 PM - 4 AM',
-        months: ['May', 'June', 'July', 'August', 'September', 'October'],
+        months: {
+          northern: ['May', 'June', 'July', 'August', 'September', 'October'],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'November',
+            'December',
+          ],
+        },
       },
     },
   ],
@@ -1879,18 +2658,32 @@ const specimens = {
       catchData: {
         price: '600',
         time: 'All day',
-        months: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
-          'July',
-          'October',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'October',
+            'November',
+            'December',
+          ],
+          southern: [
+            'January',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -1899,7 +2692,10 @@ const specimens = {
       catchData: {
         price: '900',
         time: 'All day',
-        months: ['June', 'July', 'August', 'September'],
+        months: {
+          northern: ['June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'December'],
+        },
       },
     },
     {
@@ -1908,14 +2704,17 @@ const specimens = {
       catchData: {
         price: '500',
         time: 'All day',
-        months: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'November',
+            'December',
+          ],
+          southern: ['May', 'June', 'July', 'August', 'September', 'October'],
+        },
       },
     },
     {
@@ -1924,7 +2723,10 @@ const specimens = {
       catchData: {
         price: '10,000',
         time: '4pm - 9am',
-        months: ['January', 'February', 'November', 'December'],
+        months: {
+          northern: ['January', 'February', 'November', 'December'],
+          southern: ['May', 'June', 'July', 'August'],
+        },
       },
     },
     {
@@ -1933,7 +2735,7 @@ const specimens = {
       catchData: {
         price: '500',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -1942,7 +2744,10 @@ const specimens = {
       catchData: {
         price: '1,700',
         time: 'All day',
-        months: ['May', 'June', 'July', 'August', 'September'],
+        months: {
+          northern: ['May', 'June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'November', 'December'],
+        },
       },
     },
     {
@@ -1951,7 +2756,10 @@ const specimens = {
       catchData: {
         price: '2,000',
         time: '4pm - 9am',
-        months: ['May', 'June', 'July', 'August', 'September'],
+        months: {
+          northern: ['May', 'June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'November', 'December'],
+        },
       },
     },
     {
@@ -1960,7 +2768,7 @@ const specimens = {
       catchData: {
         price: '500',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -1969,7 +2777,10 @@ const specimens = {
       catchData: {
         price: '600',
         time: 'All day',
-        months: ['July', 'August', 'September'],
+        months: {
+          northern: ['July', 'August', 'September'],
+          southern: ['January', 'February', 'March'],
+        },
       },
     },
     {
@@ -1978,7 +2789,7 @@ const specimens = {
       catchData: {
         price: '600',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -1987,7 +2798,7 @@ const specimens = {
       catchData: {
         price: '2,800',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -1996,15 +2807,26 @@ const specimens = {
       catchData: {
         price: '1,500',
         time: 'All day',
-        months: [
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -2013,14 +2835,17 @@ const specimens = {
       catchData: {
         price: '1,100',
         time: 'All day',
-        months: [
-          'January',
-          'February',
-          'September',
-          'October',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+          southern: ['March', 'April', 'May', 'June', 'July', 'August'],
+        },
       },
     },
     {
@@ -2029,7 +2854,7 @@ const specimens = {
       catchData: {
         price: '1,200',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -2038,7 +2863,7 @@ const specimens = {
       catchData: {
         price: '1,000',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -2047,15 +2872,26 @@ const specimens = {
       catchData: {
         price: '1,000',
         time: 'All day',
-        months: [
-          'March',
-          'April',
-          'May',
-          'September',
-          'October',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'March',
+            'April',
+            'May',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+          southern: [
+            'March',
+            'April',
+            'May',
+            'June',
+            'September',
+            'October',
+            'November',
+          ],
+        },
       },
     },
     {
@@ -2064,16 +2900,28 @@ const specimens = {
       catchData: {
         price: '2,000',
         time: '4pm - 9am',
-        months: [
-          'January',
-          'June',
-          'July',
-          'August',
-          'September',
-          'October',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -2082,7 +2930,10 @@ const specimens = {
       catchData: {
         price: '15,000',
         time: 'All day',
-        months: ['May', 'June', 'July', 'August', 'September'],
+        months: {
+          northern: ['May', 'June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'November', 'December'],
+        },
       },
     },
     {
@@ -2091,15 +2942,26 @@ const specimens = {
       catchData: {
         price: '1,800',
         time: '4pm - 9am',
-        months: [
-          'March',
-          'April',
-          'May',
-          'June',
-          'September',
-          'October',
-          'November',
-        ],
+        months: {
+          northern: [
+            'March',
+            'April',
+            'May',
+            'June',
+            'September',
+            'October',
+            'November',
+          ],
+          southern: [
+            'March',
+            'April',
+            'May',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -2108,7 +2970,7 @@ const specimens = {
       catchData: {
         price: '1,200',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -2117,7 +2979,24 @@ const specimens = {
       catchData: {
         price: '6,000',
         time: 'All day',
-        months: ['March', 'April', 'May', 'September', 'October', 'November'],
+        months: {
+          northern: [
+            'March',
+            'April',
+            'May',
+            'September',
+            'October',
+            'November',
+          ],
+          southern: [
+            'March',
+            'April',
+            'May',
+            'September',
+            'October',
+            'November',
+          ],
+        },
       },
     },
     {
@@ -2126,7 +3005,10 @@ const specimens = {
       catchData: {
         price: '10,000',
         time: '4pm - 9am',
-        months: ['May', 'June', 'July', 'August'],
+        months: {
+          northern: ['May', 'June', 'July', 'August'],
+          southern: ['January', 'February', 'November', 'December'],
+        },
       },
     },
     {
@@ -2135,7 +3017,10 @@ const specimens = {
       catchData: {
         price: '1,400',
         time: '9pm - 4am',
-        months: ['March', 'April', 'May', 'June'],
+        months: {
+          northern: ['March', 'April', 'May', 'June'],
+          southern: ['September', 'October', 'November', 'December'],
+        },
       },
     },
     {
@@ -2144,7 +3029,24 @@ const specimens = {
       catchData: {
         price: '2,200',
         time: 'All day',
-        months: ['June', 'July', 'August', 'September', 'October', 'November'],
+        months: {
+          northern: [
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+          ],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -2153,15 +3055,26 @@ const specimens = {
       catchData: {
         price: '1,900',
         time: 'All day',
-        months: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'November',
+            'December',
+          ],
+          southern: [
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+          ],
+        },
       },
     },
     {
@@ -2170,14 +3083,17 @@ const specimens = {
       catchData: {
         price: '6,000',
         time: 'All day',
-        months: [
-          'January',
-          'February',
-          'March',
-          'April',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'November',
+            'December',
+          ],
+          southern: ['May', 'June', 'July', 'August', 'September', 'October'],
+        },
       },
     },
     {
@@ -2186,7 +3102,10 @@ const specimens = {
       catchData: {
         price: '8,000',
         time: 'All day',
-        months: ['January', 'February', 'March', 'November', 'December'],
+        months: {
+          northern: ['January', 'February', 'March', 'November', 'December'],
+          southern: ['May', 'June', 'July', 'August', 'September'],
+        },
       },
     },
     {
@@ -2195,7 +3114,7 @@ const specimens = {
       catchData: {
         price: '600',
         time: 'All day',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -2204,7 +3123,10 @@ const specimens = {
       catchData: {
         price: '12,000',
         time: 'All day',
-        months: ['March', 'April'],
+        months: {
+          northern: ['March', 'April'],
+          southern: ['September', 'October'],
+        },
       },
     },
     {
@@ -2213,7 +3135,10 @@ const specimens = {
       catchData: {
         price: '3,000',
         time: '4pm - 9am',
-        months: ['June', 'July', 'August', 'September'],
+        months: {
+          northern: ['June', 'July', 'August', 'September'],
+          southern: ['January', 'February', 'March', 'December'],
+        },
       },
     },
     {
@@ -2222,14 +3147,17 @@ const specimens = {
       catchData: {
         price: '1,400',
         time: '4pm - 9am',
-        months: [
-          'January',
-          'February',
-          'September',
-          'October',
-          'November',
-          'December',
-        ],
+        months: {
+          northern: [
+            'January',
+            'February',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+          southern: ['March', 'April', 'May', 'June', 'July', 'August'],
+        },
       },
     },
     {
@@ -2238,7 +3166,7 @@ const specimens = {
       catchData: {
         price: '2,500',
         time: '4pm - 9am',
-        months: ['Every Month'],
+        months: { northern: ['Every Month'], southern: ['Every Month'] },
       },
     },
     {
@@ -2247,7 +3175,10 @@ const specimens = {
       catchData: {
         price: '5,000',
         time: '9pm - 4am',
-        months: ['October', 'November', 'December'],
+        months: {
+          northern: ['October', 'November', 'December'],
+          southern: ['April', 'May', 'June'],
+        },
       },
     },
     {
@@ -2256,7 +3187,10 @@ const specimens = {
       catchData: {
         price: '4,500',
         time: 'All day',
-        months: ['January', 'April', 'May', 'June', 'December'],
+        months: {
+          northern: ['January', 'April', 'May', 'June', 'December'],
+          southern: ['June', 'July', 'October', 'November', 'December'],
+        },
       },
     },
     {
@@ -2265,7 +3199,10 @@ const specimens = {
       catchData: {
         price: '12,000',
         time: '9am - 4pm & 9pm - 4am',
-        months: ['July', 'August', 'September', 'October'],
+        months: {
+          northern: ['July', 'August', 'September', 'October'],
+          southern: ['January', 'February', 'March', 'April'],
+        },
       },
     },
     {
@@ -2274,7 +3211,10 @@ const specimens = {
       catchData: {
         price: '2,500',
         time: '9pm - 4am',
-        months: ['July', 'August', 'September'],
+        months: {
+          northern: ['July', 'August', 'September'],
+          southern: ['January', 'February', 'March'],
+        },
       },
     },
     {
@@ -2283,7 +3223,10 @@ const specimens = {
       catchData: {
         price: '1,500',
         time: 'All day',
-        months: ['April', 'May', 'June', 'July', 'August'],
+        months: {
+          northern: ['April', 'May', 'June', 'July', 'August'],
+          southern: ['January', 'February', 'October', 'November', 'December'],
+        },
       },
     },
     {
@@ -2292,7 +3235,17 @@ const specimens = {
       catchData: {
         price: '1,100',
         time: '4am - 9pm',
-        months: ['May', 'June', 'July', 'August', 'September', 'October'],
+        months: {
+          northern: ['May', 'June', 'July', 'August', 'September', 'October'],
+          southern: [
+            'January',
+            'February',
+            'March',
+            'April',
+            'November',
+            'December',
+          ],
+        },
       },
     },
     {
@@ -2301,7 +3254,10 @@ const specimens = {
       catchData: {
         price: '700',
         time: '4pm - 9am',
-        months: ['August', 'September'],
+        months: {
+          northern: ['August', 'September'],
+          southern: ['February', 'March'],
+        },
       },
     },
     {
@@ -2310,7 +3266,10 @@ const specimens = {
       catchData: {
         price: '5,000',
         time: 'All day',
-        months: ['January', 'February', 'October', 'November', 'December'],
+        months: {
+          northern: ['January', 'February', 'October', 'November', 'December'],
+          southern: ['April', 'May', 'June', 'July', 'August'],
+        },
       },
     },
   ],
