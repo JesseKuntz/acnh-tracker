@@ -1,11 +1,11 @@
 {
-  "name": "acnh-tracker",
-  "short_name": "acnh-tracker",
+  "name": "Animal Crossing Tracker",
+  "short_name": "AC Tracker",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fff",
-  "theme_color": "#673ab8",
+  "theme_color": "#014D4C",
   "icons": [
     {
       "src": "/assets/icons/android-chrome-192x192.png",
