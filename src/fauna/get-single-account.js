@@ -11,7 +11,7 @@ function getSingleAccount(email) {
       });
 
       return client.query(getAllProductDataQuery).then(data => {
-        return data.filter(account => account.data.email === email);
+        return data.find(account => account.data.email === email);
       });
     })
     .catch(error => console.log('error', error.message)); // eslint-disable-line

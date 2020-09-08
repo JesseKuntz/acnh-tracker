@@ -4,6 +4,7 @@ import { Router } from 'preact-router';
 const netlifyIdentity = require('netlify-identity-widget');
 
 import getSingleAccount from '../fauna/get-single-account';
+import createAccount from '../fauna/create-account';
 
 import Header from './header';
 
@@ -12,9 +13,13 @@ import Home from '../routes/home';
 import Tracker from '../routes/tracker';
 
 async function getSpecimenData(email) {
-  const result = await getSingleAccount(email);
+  let result = await getSingleAccount(email);
 
-  return result && result[0];
+  if (!result) {
+    result = await createAccount(email);
+  }
+
+  return result || {};
 }
 
 function getAccountReference(accountData) {
