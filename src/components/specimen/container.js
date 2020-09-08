@@ -113,6 +113,7 @@ export default class SpecimenContainer extends Component {
       isSaving: false,
       originalCatchData: {},
       catchData: {},
+      type: '',
     };
 
     this.clickHandler = this.clickHandler.bind(this);
@@ -122,9 +123,21 @@ export default class SpecimenContainer extends Component {
     const { data, type } = this.props;
 
     if (data) {
-      this.setState({ catchData: data[type], originalCatchData: data[type] }); // eslint-disable-line
+      this.setState({ catchData: data[type], originalCatchData: data[type], type }); // eslint-disable-line
     } else {
       console.log('no data on componentDidMount'); // eslint-disable-line
+    }
+  }
+
+  updateCatchData() {
+    const { data, type } = this.props;
+
+    if (data) {
+      this.setState({
+        catchData: data[type],
+        originalCatchData: data[type],
+        type,
+      });
     }
   }
 
@@ -159,6 +172,10 @@ export default class SpecimenContainer extends Component {
   }
 
   render() {
+    if (this.state.type !== this.props.type) {
+      this.updateCatchData();
+    }
+
     const { type, processedType, data, accountRef } = this.props;
     const { enableSave, catchData, showError, isSaving } = this.state;
 
