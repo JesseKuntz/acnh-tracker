@@ -10,6 +10,28 @@
 	border-radius: 26px;
 }
 
+.specimen-button {
+	margin: 0 20px 20px 0;
+	height: 50px;
+  background: teal;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid #004d4d;
+  border-radius: 4px;
+  color: white;
+	width: 100%;
+	outline: none;
+	display:flex;
+  align-items:center;
+	justify-content:center;
+	text-decoration: none;
+}
+
+.icon {
+	width: 46px;
+	margin-left: 8px;
+}
+
 @media only screen and (min-width: 600px)  {
 	.home {
 		text-align: left;
@@ -18,5 +40,13 @@
 	.hero-image {
 		margin-right: 21px;
 		float: left;
+	}
+
+	.specimen-button-container {
+		display: flex;
+	}
+
+	.specimen-button {
+		width: 220px;
 	}
 }

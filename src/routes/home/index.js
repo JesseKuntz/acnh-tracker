@@ -14,14 +14,26 @@ const Home = () => (
       />
     </picture>
     <p>
-      Each tab in the navigation will keep track of a different type of
-      specimen. Once the functionality is built out, you will be able set alerts
-      for specific creatures to remind you when you are able to catch them!
+      Make an account and start tracking what you have caught so far by clicking
+      on the buttons below (or in the navigation)! Once you do that, you will
+      receive a monthly "Catches of the Month" email containing all of the
+      specimen that you still need to catch for that specific month, as well as
+      times and places that you can catch each specimen.
     </p>
-    <p>
-      For now, you can log in, and soon you will be able to start keeping track
-      of what you have caught so far.
-    </p>
+    <div class={style['specimen-button-container']}>
+      <a class={style['specimen-button']} href="/tracker/fish">
+        Fish
+        <img class={style.icon} src={`../../assets/menu/fish.svg`} />
+      </a>
+      <a class={style['specimen-button']} href="/tracker/bug">
+        Bugs
+        <img class={style.icon} src={`../../assets/menu/bug.svg`} />
+      </a>
+      <a class={style['specimen-button']} href="/tracker/sea-creature">
+        Sea Creatures
+        <img class={style.icon} src={`../../assets/menu/sea-creature.svg`} />
+      </a>
+    </div>
   </div>
 );
 
