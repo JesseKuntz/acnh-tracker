@@ -13,7 +13,7 @@ export default class LoginButton extends Component {
     return (
       <div class={style.container}>
         <button class={style.login} onClick={this.clickHandler}>
-          Log in
+          Log In
         </button>
       </div>
     );

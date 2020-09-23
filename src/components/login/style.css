@@ -27,9 +27,12 @@
 .info {
   float: left;
   margin-right: 12px;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  overflow: hidden;
 }
 
-.logout {
+.settings {
   cursor: pointer;
   background: white;
   display: inline-block;
@@ -38,4 +41,5 @@
   border: 1px solid white;
   border-radius: 4px;
   margin-right: 14px;
+  text-decoration: none;
 }

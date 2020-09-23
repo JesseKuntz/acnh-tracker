@@ -47,10 +47,12 @@ export default class Tracker extends Component {
             />
           </Fragment>
         ) : (
-          <p>
-            Click the log in button above to create an account and start
-            tracking your catches!
-          </p>
+          !this.props.isLoading && (
+            <p>
+              Click the log in button above to create an account and start
+              tracking your catches!
+            </p>
+          )
         )}
       </div>
     );

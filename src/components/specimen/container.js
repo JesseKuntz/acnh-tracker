@@ -7,6 +7,7 @@ import style from './style';
 import globalStyle from '../../routes/tracker/style.css';
 
 import saveCatchData from '../../fauna/save-catch-data';
+import { areObjectsDifferent } from '../../support/diff-objects';
 
 function filterSpecimen() {
   const input = document.getElementById('specimen-filter');
@@ -70,31 +71,6 @@ function renderSpecimens(type, data, clickHandler) {
   });
 }
 
-function areObjectsDifferent(newObj, oldObj) {
-  const keys = Object.keys(newObj);
-
-  for (let keyIndex = 0; keyIndex < keys.length; keyIndex++) {
-    const newVal = newObj[keys[keyIndex]];
-    const oldVal = oldObj[keys[keyIndex]];
-
-    if ((newVal && !oldVal) || (!newVal && oldVal)) {
-      return true;
-    }
-  }
-
-  return false;
-}
-
-function getSaveButtonClass(enableSave) {
-  const baseClass = style.button;
-
-  if (!enableSave) {
-    return `${baseClass} ${style.disabled}`;
-  }
-
-  return baseClass;
-}
-
 function getSaveButtonContent(isSaving, enableSave) {
   if (!enableSave) {
     return 'Saved';
@@ -121,12 +97,7 @@ export default class SpecimenContainer extends Component {
 
   componentDidMount() {
     const { data, type } = this.props;
-
-    if (data) {
-      this.setState({ catchData: data[type], originalCatchData: data[type], type }); // eslint-disable-line
-    } else {
-      console.log('no data on componentDidMount'); // eslint-disable-line
-    }
+    this.setState({ catchData: data[type], originalCatchData: data[type], type }); // eslint-disable-line
   }
 
   updateCatchData() {
@@ -185,7 +156,7 @@ export default class SpecimenContainer extends Component {
       <Fragment>
         <button
           disabled={!enableSave}
-          class={getSaveButtonClass(enableSave, isSaving)}
+          class={style.button}
           onClick={() => this.saveNewCatchData(catchData, accountRef, type)}
         >
           {getSaveButtonContent(isSaving, enableSave)}
@@ -199,6 +170,7 @@ export default class SpecimenContainer extends Component {
         <input
           type="text"
           id="specimen-filter"
+          class={style['specimen-filter']}
           placeholder={placeholder}
           onKeyUp={filterSpecimen}
         />

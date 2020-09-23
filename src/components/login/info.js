@@ -42,10 +42,6 @@ export default class LoginInfo extends Component {
     netlifyIdentity.on('logout', () => this.userLogout());
   }
 
-  clickHandler() {
-    netlifyIdentity.logout();
-  }
-
   render() {
     if (!this.state.user) {
       return (
@@ -60,9 +56,9 @@ export default class LoginInfo extends Component {
         <div class={style.info}>
           Account: {this.state.user.user_metadata.full_name}
         </div>
-        <div class={style.logout} onClick={this.clickHandler}>
-          Log out
-        </div>
+        <a class={style.settings} href="/settings">
+          Settings
+        </a>
       </div>
     );
   }

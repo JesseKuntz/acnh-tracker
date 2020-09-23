@@ -11,6 +11,7 @@ import Header from './header';
 // Code-splitting is automated for routes
 import Home from '../routes/home';
 import Tracker from '../routes/tracker';
+import Settings from '../routes/settings';
 
 async function getSpecimenData(email) {
   let result = await getSingleAccount(email);
@@ -112,6 +113,8 @@ export default class App extends Component {
   }
 
   render() {
+    const accountReference = getAccountReference(this.state.specimenData);
+
     return (
       <div id="app">
         <Header />
@@ -120,7 +123,13 @@ export default class App extends Component {
           <Tracker
             path="/tracker/:type"
             data={this.state.specimenData.data}
-            accountRef={getAccountReference(this.state.specimenData)}
+            accountRef={accountReference}
+            isLoading={this.state.isLoading}
+          />
+          <Settings
+            path="/settings"
+            accountRef={accountReference}
+            data={this.state.specimenData.data}
             isLoading={this.state.isLoading}
           />
         </Router>

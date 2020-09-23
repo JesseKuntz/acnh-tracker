@@ -21,9 +21,9 @@
   color: white;
 	width: 100%;
 	outline: none;
-	display:flex;
-  align-items:center;
-	justify-content:center;
+	display: flex;
+  align-items: center;
+	justify-content: center;
 	text-decoration: none;
 }
 

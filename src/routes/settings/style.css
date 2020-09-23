@@ -1,0 +1,71 @@
+.settings {
+  padding: var(--page-padding-top) 14px;
+}
+
+.title {
+  margin-right: 20px;
+  margin-bottom: 6px;
+}
+
+.title-row {
+	display: flex;
+	align-items: center;
+}
+
+.margin {
+  margin-top: 16px;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #014d4c;
+  border-bottom: 8px solid #20b1a9;
+  border-radius: 50%;
+  width: 39px;
+  height: 39px;
+  animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.radio-container {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.radio-container input {
+  margin-right: 20px;
+}
+
+.button {
+  margin: 20px 20px 20px 0;
+	height: 50px;
+  background: teal;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid #004d4d;
+  border-radius: 4px;
+  color: white;
+	width: 220px;
+	outline: none;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+button:disabled,
+button[disabled] {
+  border: 2px solid #004d4d80;
+  background: #36817F80;
+  cursor: default;
+}
+
+.error {
+  color: red;
+  margin-bottom: 24px;
+  font-size: 18px;
+}
