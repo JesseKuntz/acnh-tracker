@@ -18,6 +18,7 @@ async function getSpecimenData(email) {
 
   if (!result) {
     result = await createAccount(email);
+    window.open('https://ac-tracker.netlify.app/settings', '_blank');
   }
 
   return result || {};
