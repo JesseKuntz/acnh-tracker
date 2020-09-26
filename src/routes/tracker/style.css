@@ -5,16 +5,13 @@
 
 .title {
 	text-transform: capitalize;
-	margin-right: 20px;
+  margin-right: 20px;
+  margin-bottom: 6px;
 }
 
 .title-row {
 	display: flex;
 	align-items: center;
-}
-
-h1 {
-  margin-bottom: 6px;
 }
 
 .margin {
