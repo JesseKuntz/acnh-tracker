@@ -131,12 +131,7 @@ export default class SpecimenContainer extends Component {
     const result = await saveCatchData(data, accountRef, type);
 
     if (result.data) {
-      return this.setState({
-        originalCatchData: result.data[type],
-        enableSave: false,
-        showError: false,
-        isSaving: false,
-      });
+      return window.location.reload();
     }
 
     return this.setState({ showError: true, isSaving: false });
