@@ -25,7 +25,7 @@ function Monthly(props) {
         {dataExists(props.data) ? (
           <div>
            Hello there!
-          <div/>
+          </div>
         ) : (
           !props.isLoading && (
             <p>
@@ -37,4 +37,4 @@ function Monthly(props) {
   );
 }
 
-export default Monthly
+export default Monthly;
