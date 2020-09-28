@@ -23,9 +23,9 @@ function Monthly(props) {
         </div>
 
         {dataExists(props.data) ? (
-          <div
+          <div>
            Hello there!
-          />
+          <div/>
         ) : (
           !props.isLoading && (
             <p>
