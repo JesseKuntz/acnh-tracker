@@ -138,6 +138,7 @@ export default class App extends Component {
             path="/monthly"
             data={this.state.specimenData.data}
             isLoading={this.state.isLoading}
+          />
         </Router>
       </div>
     );
