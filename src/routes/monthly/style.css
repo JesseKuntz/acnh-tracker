@@ -1,0 +1,32 @@
+.monthly {
+  padding: var(--page-padding-top) 14px;
+}
+
+.title {
+  margin-right: 20px;
+  margin-bottom: 6px;
+}
+
+.title-row {
+	display: flex;
+	align-items: center;
+}
+
+.margin {
+  margin-top: 16px;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #014d4c;
+  border-bottom: 8px solid #20b1a9;
+  border-radius: 50%;
+  width: 39px;
+  height: 39px;
+  animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
