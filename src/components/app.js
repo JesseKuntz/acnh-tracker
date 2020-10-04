@@ -12,6 +12,7 @@ import Header from './header';
 import Home from '../routes/home';
 import Tracker from '../routes/tracker';
 import Settings from '../routes/settings';
+import Monthly from '../routes/monthly';
 
 async function getSpecimenData(email) {
   let result = await getSingleAccount(email);
@@ -130,6 +131,11 @@ export default class App extends Component {
           <Settings
             path="/settings"
             accountRef={accountReference}
+            data={this.state.specimenData.data}
+            isLoading={this.state.isLoading}
+          />
+          <Monthly
+            path="/monthly"
             data={this.state.specimenData.data}
             isLoading={this.state.isLoading}
           />

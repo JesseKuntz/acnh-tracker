@@ -1,10 +1,8 @@
-.tracker {
-	padding: var(--page-padding-top) 14px 56px;
-	width: 100%;
+.monthly {
+  padding: var(--page-padding-top) 14px;
 }
 
 .title {
-	text-transform: capitalize;
   margin-right: 20px;
   margin-bottom: 0;
 }
@@ -31,4 +29,9 @@
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.specimen-container {
+  display: flex;
+  flex-wrap: wrap;
 }

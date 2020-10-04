@@ -7,11 +7,15 @@ function processType(type) {
   return type.replace('-', ' ');
 }
 
-function HeaderLink({ type, clickHandler }) {
+function getHref(type, href) {
+  return href ? href : `/tracker/${type}`;
+}
+
+function HeaderLink({ type, clickHandler, href }) {
   return (
     <Link
       activeClassName={style.active}
-      href={`/tracker/${type}`}
+      href={getHref(type, href)}
       onClick={clickHandler}
     >
       <div class={`${style.content} ${style['menu-link-wrapper']}`}>
