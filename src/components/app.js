@@ -8,7 +8,6 @@ import createAccount from '../fauna/create-account';
 
 import Header from './header';
 
-// Code-splitting is automated for routes
 import Home from '../routes/home';
 import Tracker from '../routes/tracker';
 import Settings from '../routes/settings';

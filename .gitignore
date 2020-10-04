@@ -3,6 +3,7 @@ node_modules
 /*.log
 .DS_STORE
 .env
+coverage/
 
 # Local Netlify folder
 .netlify

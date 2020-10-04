@@ -45,6 +45,19 @@
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
+    ],
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "statements": 28,
+        "branches": 16,
+        "functions": 23,
+        "lines": 29
+      }
+    },
+    "coverageReporters": [
+      "html",
+      "text"
     ]
   }
 }
