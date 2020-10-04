@@ -91,7 +91,7 @@ function getMonthData(data, month) {
 function renderSpecimens(monthData, type) {
   let location;
   if (type === 'sea-creature') {
-    location = 'In the Ocean';
+    location = 'Ocean';
   }
 
   return (
