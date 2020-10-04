@@ -3,7 +3,7 @@ import { h, Component } from 'preact';
 import style from './style';
 
 function getSpecimenClass(selected) {
-  const baseClass = style.specimen;
+  const baseClass = `${style['specimen-base']} ${style['specimen-tracker']}`;
 
   if (selected) {
     return `${baseClass} ${style.selected}`;

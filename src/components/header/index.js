@@ -64,6 +64,11 @@ class Header extends Component {
               type={'sea-creature'}
               clickHandler={() => this.clickHandler()}
             />
+            <HeaderLink
+              href={'/monthly'}
+              type={'monthly-catches'}
+              clickHandler={() => this.clickHandler()}
+            />
           </nav>
         </header>
         <header class={`${style['header-secondary']} ${style.header}`}>

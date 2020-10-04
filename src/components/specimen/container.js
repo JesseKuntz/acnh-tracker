@@ -8,11 +8,12 @@ import globalStyle from '../../routes/tracker/style.css';
 
 import saveCatchData from '../../fauna/save-catch-data';
 import { areObjectsDifferent } from '../../support/diff-objects';
+import { slugify } from '../support/slugify';
 
 function filterSpecimen() {
   const input = document.getElementById('specimen-filter');
   const filter = input.value.toUpperCase();
-  const container = document.querySelector('.specimen-container');
+  const container = document.querySelector('.tracker-specimen-container');
   const item = container.getElementsByTagName('div');
 
   for (let i = 0; i < item.length; i++) {
@@ -24,25 +25,6 @@ function filterSpecimen() {
       item[i].style.display = 'none';
     }
   }
-}
-
-function slugify(string) {
-  const a =
-    'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;';
-  const b =
-    'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------';
-  const p = new RegExp(a.split('').join('|'), 'g');
-
-  return string
-    .toString()
-    .toLowerCase()
-    .replace(/\s+/g, '-') // Replace spaces with -
-    .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
-    .replace(/&/g, '-and-') // Replace & with 'and'
-    .replace(/[^\w\-]+/g, '') // Remove all non-word characters
-    .replace(/\-\-+/g, '-') // Replace multiple - with single -
-    .replace(/^-+/, '') // Trim - from start of text
-    .replace(/-+$/, ''); // Trim - from end of text
 }
 
 function hasBeenCaught({ name, data }) {
@@ -169,7 +151,7 @@ export default class SpecimenContainer extends Component {
           placeholder={placeholder}
           onKeyUp={filterSpecimen}
         />
-        <div class={`${style.container} specimen-container`}>
+        <div class={`${style.container} tracker-specimen-container`}>
           {renderSpecimens(type, data, this.clickHandler)}
         </div>
       </Fragment>

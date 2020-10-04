@@ -1,12 +1,16 @@
-.specimen {
+.specimen-base {
   border: 1px solid black;
   margin: 4px;
   border-radius: 4px;
   justify-content: center;
   align-items: center;
+  text-align: center;
+}
+
+.specimen-tracker {
   width: 102px;
-  cursor: pointer;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
 }
 
 .logo {
@@ -81,4 +85,23 @@ button[disabled] {
   color: red;
   margin-bottom: 24px;
   font-size: 18px;
+}
+
+.verbose-title {
+  padding: 4px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  font-weight: bold;
+}
+
+.info-container {
+  padding: 8px;
+}
+
+.info-text {
+  padding-bottom: 4px;
+}
+
+.bold {
+  font-weight: bold;
 }
