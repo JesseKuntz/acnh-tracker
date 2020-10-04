@@ -1,4 +1,4 @@
-import { h, Component } from 'preact';
+import { h } from 'preact';
 
 import SettingsContent from './settings-content';
 
@@ -16,31 +16,26 @@ function renderSpinner(isLoading) {
   return null;
 }
 
-export default class Settings extends Component {
-  state = {};
-
-  render() {
-    return (
-      <div class={style.settings}>
-        <div class={style['title-row']}>
-          <h1 class={style.title}>Settings</h1>
-          {renderSpinner(this.props.isLoading)}
-        </div>
-
-        {dataExists(this.props.data) ? (
-          <SettingsContent
-            data={this.props.data}
-            accountRef={this.props.accountRef}
-          />
-        ) : (
-          !this.props.isLoading && (
-            <p>
-              You have to log in before you can view and/or change your
-              settings... so do that!
-            </p>
-          )
-        )}
+function Settings({ data, isLoading, accountRef }) {
+  return (
+    <div class={style.settings}>
+      <div class={style['title-row']}>
+        <h1 class={style.title}>Settings</h1>
+        {renderSpinner(isLoading)}
       </div>
-    );
-  }
+
+      {dataExists(data) ? (
+        <SettingsContent data={data} accountRef={accountRef} />
+      ) : (
+        !isLoading && (
+          <p>
+            You have to log in before you can view and/or change your
+            settings... so do that!
+          </p>
+        )
+      )}
+    </div>
+  );
 }
+
+export default Settings;
