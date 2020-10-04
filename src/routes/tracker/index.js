@@ -2,23 +2,11 @@ import { h, Fragment } from 'preact';
 
 import SpecimenContainer from '../../components/specimen/container';
 
+import { renderSpinner } from '../../components/support/render-spinner';
+import { dataExists } from '../../components/support/data-exists';
+import { processType } from '../../components/support/process-type';
+
 import style from './style';
-
-function processType(type) {
-  return type.replace('-', ' ');
-}
-
-function renderSpinner(isLoading) {
-  if (isLoading) {
-    return <div class={`${style.loader} ${style.margin}`} />;
-  }
-
-  return null;
-}
-
-function dataExists(data) {
-  return !(!data || !Object.keys(data).length);
-}
 
 function Tracker({ type, data, accountRef, isLoading }) {
   const processedType = processType(type);

@@ -1,11 +1,9 @@
 import { h } from 'preact';
 import { Link } from 'preact-router/match';
 
-import style from './style.css';
+import { processType } from '../support/process-type';
 
-function processType(type) {
-  return type.replace('-', ' ');
-}
+import style from './style.css';
 
 function getHref(type, href) {
   return href ? href : `/tracker/${type}`;

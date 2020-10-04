@@ -2,9 +2,13 @@ import { h, Fragment } from 'preact';
 
 import VerboseSpecimen from '../../components/specimen/verbose-specimen';
 
-import style from './style';
 import specimenData from '../../assets/index';
+
 import { slugify } from '../../components/support/slugify';
+import { renderSpinner } from '../../components/support/render-spinner';
+import { dataExists } from '../../components/support/data-exists';
+
+import style from './style';
 
 const monthMap = {
   0: 'January',
@@ -35,18 +39,6 @@ const monthEmojiMap = {
   November: '🍁',
   December: '⛄️',
 };
-
-function dataExists(data) {
-  return !(!data || !Object.keys(data).length);
-}
-
-function renderSpinner(isLoading) {
-  if (isLoading) {
-    return <div class={`${style.loader} ${style.margin}`} />;
-  }
-
-  return null;
-}
 
 function shouldAddSpecimen(month, specimen, type, hemisphere, data) {
   const months = specimen.catchData.months[hemisphere];

@@ -2,19 +2,10 @@ import { h } from 'preact';
 
 import SettingsContent from './settings-content';
 
+import { renderSpinner } from '../../components/support/render-spinner';
+import { dataExists } from '../../components/support/data-exists';
+
 import style from './style';
-
-function dataExists(data) {
-  return !(!data || !Object.keys(data).length);
-}
-
-function renderSpinner(isLoading) {
-  if (isLoading) {
-    return <div class={`${style.loader} ${style.margin}`} />;
-  }
-
-  return null;
-}
 
 function Settings({ data, isLoading, accountRef }) {
   return (

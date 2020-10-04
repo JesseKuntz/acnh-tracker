@@ -4,11 +4,11 @@ import Specimen from './index';
 import Specimens from '../../assets/index';
 
 import style from './style';
-import globalStyle from '../../routes/tracker/style.css';
 
 import saveCatchData from '../../fauna/save-catch-data';
-import { areObjectsDifferent } from '../../support/diff-objects';
+import { areObjectsDifferent } from '../support/diff-objects';
 import { slugify } from '../support/slugify';
+import { getSaveButtonContent } from '../support/get-save-button-content';
 
 function filterSpecimen() {
   const input = document.getElementById('specimen-filter');
@@ -51,14 +51,6 @@ function renderSpecimens(type, data, clickHandler) {
       />
     );
   });
-}
-
-function getSaveButtonContent(isSaving, enableSave) {
-  if (!enableSave) {
-    return 'Saved';
-  }
-
-  return isSaving ? <div class={globalStyle.loader} /> : 'Save';
 }
 
 export default class SpecimenContainer extends Component {

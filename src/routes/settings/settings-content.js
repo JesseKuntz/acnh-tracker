@@ -2,20 +2,12 @@ import { h, Component, Fragment } from 'preact';
 
 const netlifyIdentity = require('netlify-identity-widget');
 
-import globalStyle from '../tracker/style.css';
 import style from './style';
 
 import saveSettingsData from '../../fauna/save-settings-data';
 
-import { areObjectsDifferent } from '../../support/diff-objects';
-
-function getSaveButtonContent(isSaving, enableSave) {
-  if (!enableSave) {
-    return 'Saved';
-  }
-
-  return isSaving ? <div class={globalStyle.loader} /> : 'Save';
-}
+import { areObjectsDifferent } from '../../components/support/diff-objects';
+import { getSaveButtonContent } from '../../components/support/get-save-button-content';
 
 export default class SettingsContent extends Component {
   constructor(props) {
