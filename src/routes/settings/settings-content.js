@@ -2,7 +2,7 @@ import { h, Component, Fragment } from 'preact';
 
 const netlifyIdentity = require('netlify-identity-widget');
 
-import style from './style';
+import style from './style.css';
 
 import saveSettingsData from '../../fauna/save-settings-data';
 

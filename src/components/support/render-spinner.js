@@ -1,4 +1,4 @@
-import style from './style';
+import style from './style.css';
 
 function renderSpinner(isLoading) {
   if (isLoading) {

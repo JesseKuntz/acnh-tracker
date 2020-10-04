@@ -1,4 +1,4 @@
-import style from './style';
+import style from './style.css';
 
 function getSaveButtonContent(isSaving, enableSave) {
   if (!enableSave) {

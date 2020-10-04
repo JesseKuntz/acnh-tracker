@@ -4,7 +4,7 @@ const netlifyIdentity = require('netlify-identity-widget');
 
 import LoginButton from './button';
 
-import style from './style';
+import style from './style.css';
 
 const CSS_PADDING_VAR_NAME = '--page-padding-top';
 const LOGGED_IN_PADDING = '92px';

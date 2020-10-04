@@ -5,7 +5,7 @@ import SettingsContent from './settings-content';
 import { renderSpinner } from '../../components/support/render-spinner';
 import { dataExists } from '../../components/support/data-exists';
 
-import style from './style';
+import style from './style.css';
 
 function Settings({ data, isLoading, accountRef }) {
   return (

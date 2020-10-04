@@ -6,7 +6,7 @@ import { renderSpinner } from '../../components/support/render-spinner';
 import { dataExists } from '../../components/support/data-exists';
 import { processType } from '../../components/support/process-type';
 
-import style from './style';
+import style from './style.css';
 
 function Tracker({ type, data, accountRef, isLoading }) {
   const processedType = processType(type);

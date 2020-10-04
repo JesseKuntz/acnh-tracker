@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 
-import style from './style';
+import style from './style.css';
 
 function getSpecimenClass(selected) {
   const baseClass = `${style['specimen-base']} ${style['specimen-tracker']}`;

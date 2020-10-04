@@ -8,7 +8,7 @@ import { slugify } from '../../components/support/slugify';
 import { renderSpinner } from '../../components/support/render-spinner';
 import { dataExists } from '../../components/support/data-exists';
 
-import style from './style';
+import style from './style.css';
 
 const monthMap = {
   0: 'January',

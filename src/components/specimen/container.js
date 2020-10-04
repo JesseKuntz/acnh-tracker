@@ -3,7 +3,7 @@ import { h, Fragment, Component } from 'preact';
 import Specimen from './index';
 import Specimens from '../../assets/index';
 
-import style from './style';
+import style from './style.css';
 
 import saveCatchData from '../../fauna/save-catch-data';
 import { areObjectsDifferent } from '../support/diff-objects';

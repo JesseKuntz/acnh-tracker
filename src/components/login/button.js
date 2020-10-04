@@ -1,21 +1,21 @@
-import { h, Component } from 'preact';
+import { h } from 'preact';
 
 const netlifyIdentity = require('netlify-identity-widget');
 
-import style from './style';
+import style from './style.css';
 
-export default class LoginButton extends Component {
-  clickHandler() {
-    netlifyIdentity.open();
-  }
-
-  render() {
-    return (
-      <div class={style.container}>
-        <button class={style.login} onClick={this.clickHandler}>
-          Log In
-        </button>
-      </div>
-    );
-  }
+function clickHandler() {
+  netlifyIdentity.open();
 }
+
+function LoginButton() {
+  return (
+    <div class={style.container}>
+      <button class={style.login} onClick={clickHandler}>
+        Log In
+      </button>
+    </div>
+  );
+}
+
+export default LoginButton;

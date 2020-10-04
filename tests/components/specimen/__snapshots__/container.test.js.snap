@@ -1,0 +1,584 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SpecimenContainer matches snapshot 1`] = `
+Array [
+  <button
+    className="button"
+    disabled={true}
+    onClick={[Function]}
+  >
+    Saved
+  </button>,
+  <input
+    className="specimen-filter"
+    id="specimen-filter"
+    onKeyUp={[Function]}
+    placeholder="Search for a undefined!"
+    type="text"
+  />,
+  <div
+    className="container tracker-specimen-container"
+  >
+    <Specimen
+      clickHandler={[Function]}
+      image="bitterling"
+      key="Bitterling:undefined"
+      name="Bitterling"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="palechub"
+      key="Pale chub:undefined"
+      name="Pale chub"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="cruciancarp"
+      key="Crucian carp:undefined"
+      name="Crucian carp"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="dace"
+      key="Dace:undefined"
+      name="Dace"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="carp"
+      key="Carp:undefined"
+      name="Carp"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="koi"
+      key="Koi:undefined"
+      name="Koi"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="goldfish"
+      key="Goldfish:undefined"
+      name="Goldfish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="popeyedgoldfish"
+      key="Pop-eyed goldfish:undefined"
+      name="Pop-eyed goldfish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="ranchugoldfish"
+      key="Ranchu goldfish:undefined"
+      name="Ranchu goldfish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="killifish"
+      key="Killifish:undefined"
+      name="Killifish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="crawfish"
+      key="Crawfish:undefined"
+      name="Crawfish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="softshelledturtle"
+      key="Soft-shelled turtle:undefined"
+      name="Soft-shelled turtle"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="snappingturtle"
+      key="Snapping Turtle:undefined"
+      name="Snapping Turtle"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="tadpole"
+      key="Tadpole:undefined"
+      name="Tadpole"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="frog"
+      key="Frog:undefined"
+      name="Frog"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="freshwatergoby"
+      key="Freshwater goby:undefined"
+      name="Freshwater goby"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="loach"
+      key="Loach:undefined"
+      name="Loach"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="catfish"
+      key="Catfish:undefined"
+      name="Catfish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="giantsnakehead"
+      key="Giant snakehead:undefined"
+      name="Giant snakehead"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="bluegill"
+      key="Bluegill:undefined"
+      name="Bluegill"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="yellowperch"
+      key="Yellow perch:undefined"
+      name="Yellow perch"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="blackbass"
+      key="Black bass:undefined"
+      name="Black bass"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="tilapia"
+      key="Tilapia:undefined"
+      name="Tilapia"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="pike"
+      key="Pike:undefined"
+      name="Pike"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="pondsmelt"
+      key="Pond smelt:undefined"
+      name="Pond smelt"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="sweetfish"
+      key="Sweetfish:undefined"
+      name="Sweetfish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="cherrysalmon"
+      key="Cherry salmon:undefined"
+      name="Cherry salmon"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="char"
+      key="Char:undefined"
+      name="Char"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="goldentrout"
+      key="Golden trout:undefined"
+      name="Golden trout"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="stringfish"
+      key="Stringfish:undefined"
+      name="Stringfish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="salmon"
+      key="Salmon:undefined"
+      name="Salmon"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="kingsalmon"
+      key="King salmon:undefined"
+      name="King salmon"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="mittencrab"
+      key="Mitten crab:undefined"
+      name="Mitten crab"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="guppy"
+      key="Guppy:undefined"
+      name="Guppy"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="nibblefish"
+      key="Nibble fish:undefined"
+      name="Nibble fish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="angelfish"
+      key="Angelfish:undefined"
+      name="Angelfish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="betta"
+      key="Betta:undefined"
+      name="Betta"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="neontetra"
+      key="Neon tetra:undefined"
+      name="Neon tetra"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="rainbowfish"
+      key="Rainbowfish:undefined"
+      name="Rainbowfish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="piranha"
+      key="Piranha:undefined"
+      name="Piranha"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="arowana"
+      key="Arowana:undefined"
+      name="Arowana"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="dorado"
+      key="Dorado:undefined"
+      name="Dorado"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="gar"
+      key="Gar:undefined"
+      name="Gar"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="arapaima"
+      key="Arapaima:undefined"
+      name="Arapaima"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="saddledbichir"
+      key="Saddled bichir:undefined"
+      name="Saddled bichir"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="sturgeon"
+      key="Sturgeon:undefined"
+      name="Sturgeon"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="seabutterfly"
+      key="Sea butterfly:undefined"
+      name="Sea butterfly"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="seahorse"
+      key="Sea horse:undefined"
+      name="Sea horse"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="clownfish"
+      key="Clown fish:undefined"
+      name="Clown fish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="surgeonfish"
+      key="Surgeonfish:undefined"
+      name="Surgeonfish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="butterflyfish"
+      key="Butterfly fish:undefined"
+      name="Butterfly fish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="napoleonfish"
+      key="Napoleonfish:undefined"
+      name="Napoleonfish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="zebraturkeyfish"
+      key="Zebra turkeyfish:undefined"
+      name="Zebra turkeyfish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="blowfish"
+      key="Blowfish:undefined"
+      name="Blowfish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="pufferfish"
+      key="Puffer fish:undefined"
+      name="Puffer fish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="anchovy"
+      key="Anchovy:undefined"
+      name="Anchovy"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="horsemackerel"
+      key="Horse mackerel:undefined"
+      name="Horse mackerel"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="barredknifejaw"
+      key="Barred knifejaw:undefined"
+      name="Barred knifejaw"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="seabass"
+      key="Sea bass:undefined"
+      name="Sea bass"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="redsnapper"
+      key="Red snapper:undefined"
+      name="Red snapper"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="dab"
+      key="Dab:undefined"
+      name="Dab"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="oliveflounder"
+      key="Olive flounder:undefined"
+      name="Olive flounder"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="squid"
+      key="Squid:undefined"
+      name="Squid"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="morayeel"
+      key="Moray eel:undefined"
+      name="Moray eel"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="ribboneel"
+      key="Ribbon eel:undefined"
+      name="Ribbon eel"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="tuna"
+      key="Tuna:undefined"
+      name="Tuna"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="bluemarlin"
+      key="Blue marlin:undefined"
+      name="Blue marlin"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="gianttrevally"
+      key="Giant trevally:undefined"
+      name="Giant trevally"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="mahimahi"
+      key="Mahi-mahi:undefined"
+      name="Mahi-mahi"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="oceansunfish"
+      key="Ocean sunfish:undefined"
+      name="Ocean sunfish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="ray"
+      key="Ray:undefined"
+      name="Ray"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="sawshark"
+      key="Saw shark:undefined"
+      name="Saw shark"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="hammerheadshark"
+      key="Hammerhead shark:undefined"
+      name="Hammerhead shark"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="greatwhiteshark"
+      key="Great white shark:undefined"
+      name="Great white shark"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="whaleshark"
+      key="Whale shark:undefined"
+      name="Whale shark"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="suckerfish"
+      key="Suckerfish:undefined"
+      name="Suckerfish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="footballfish"
+      key="Football fish:undefined"
+      name="Football fish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="oarfish"
+      key="Oarfish:undefined"
+      name="Oarfish"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="barreleye"
+      key="Barreleye:undefined"
+      name="Barreleye"
+      type="fish"
+    />
+    <Specimen
+      clickHandler={[Function]}
+      image="coelacanth"
+      key="Coelacanth:undefined"
+      name="Coelacanth"
+      type="fish"
+    />
+  </div>,
+]
+`;

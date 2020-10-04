@@ -1,6 +1,6 @@
 import { h } from 'preact';
 
-import style from './style';
+import style from './style.css';
 
 function VerboseSpecimen({ type, image, name, location, time }) {
   return (
