@@ -54,7 +54,8 @@ export default class LoginInfo extends Component {
     return (
       <div class={style['info-container']}>
         <div class={style.info}>
-          Account: {this.state.user.user_metadata.full_name}
+          Account:{' '}
+          {this.state.user.user_metadata.full_name || this.state.user.email}
         </div>
         <a class={style.settings} href="/settings">
           Settings

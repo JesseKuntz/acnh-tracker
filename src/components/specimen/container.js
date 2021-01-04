@@ -71,7 +71,12 @@ export default class SpecimenContainer extends Component {
 
   componentDidMount() {
     const { data, type } = this.props;
-    this.setState({ catchData: data[type], originalCatchData: data[type], type }); // eslint-disable-line
+    // eslint-disable-next-line
+    this.setState({
+      catchData: data[type],
+      originalCatchData: data[type],
+      type,
+    });
   }
 
   updateCatchData() {

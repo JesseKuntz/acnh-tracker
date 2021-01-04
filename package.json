@@ -7,7 +7,7 @@
     "build": "preact build",
     "serve": "sirv build --cors --single",
     "dev": "preact watch",
-    "lint": "eslint src",
+    "lint": "eslint src --fix",
     "test": "jest"
   },
   "devDependencies": {
@@ -16,8 +16,10 @@
     "enzyme-adapter-preact-pure": "^2.0.0",
     "enzyme-to-json": "^3.6.1",
     "eslint": "^6.8.0",
+    "eslint-config-groupon": "^10.0.1",
     "eslint-config-preact": "^1.1.1",
     "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-mocha": "^8.0.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.4",
     "identity-obj-proxy": "^3.0.0",
@@ -50,7 +52,7 @@
     "coverageThreshold": {
       "global": {
         "statements": 28,
-        "branches": 16,
+        "branches": 15,
         "functions": 23,
         "lines": 29
       }
