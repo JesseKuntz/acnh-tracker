@@ -1,4 +1,5 @@
 import { h, Fragment } from 'preact';
+import { useState } from 'preact/hooks';
 
 import VerboseSpecimen from '../../components/specimen/verbose-specimen';
 
@@ -101,9 +102,27 @@ function renderSpecimens(monthData, type) {
   );
 }
 
+function getMonthSelect(currentMonth, setMonth) {
+  const options = Object.values(monthMap).map(month => (
+    <option selected={month === currentMonth}>
+      {month} {monthEmojiMap[month]}
+    </option>
+  ));
+
+  return (
+    <select
+      class={style['month-selector']}
+      onChange={event => setMonth(event.target.selectedIndex)}
+    >
+      {options}
+    </select>
+  );
+}
+
 function Monthly({ data, isLoading }) {
   const date = new Date();
-  const month = date.getMonth();
+  const [month, setMonth] = useState(date.getMonth());
+
   const formattedMonth = monthMap[month];
 
   const monthData = getMonthData(data, formattedMonth);
@@ -117,10 +136,11 @@ function Monthly({ data, isLoading }) {
 
       {dataExists(data) ? (
         <Fragment>
-          <h2>
-            Here's what you need to catch in {formattedMonth}{' '}
-            {monthEmojiMap[formattedMonth]}
-          </h2>
+          <div class={style.month}>
+            <h2>Here's what you need to catch in:</h2>
+            {getMonthSelect(formattedMonth, setMonth)}
+          </div>
+
           <h3>Fish:</h3>
           {renderSpecimens(monthData, 'fish')}
           <h3>Bugs:</h3>
