@@ -2,12 +2,14 @@ import { h, Component, Fragment } from 'preact';
 
 const netlifyIdentity = require('netlify-identity-widget');
 
+import SaveButton from '../../components/save-button';
+
 import style from './style.css';
+import buttonStyle from '../../components/save-button/style.css';
 
 import saveSettingsData from '../../fauna/save-settings-data';
 
 import { areObjectsDifferent } from '../../components/support/diff-objects';
-import { getSaveButtonContent } from '../../components/support/get-save-button-content';
 
 export default class SettingsContent extends Component {
   constructor(props) {
@@ -59,7 +61,7 @@ export default class SettingsContent extends Component {
     });
   }
 
-  async saveNewCatchData(data, accountRef) {
+  async saveNewSettingsData(data, accountRef) {
     this.setState({ isSaving: true });
 
     const result = await saveSettingsData(data, accountRef);
@@ -134,22 +136,20 @@ export default class SettingsContent extends Component {
           />
           <label for="unsubscribed">Unsubscribed</label>
         </div>
+        <SaveButton
+          {...{
+            enableSave,
+            isSaving,
+            showError,
+            className: style.button,
+            clickHandler: () =>
+              this.saveNewSettingsData(newSettings, this.props.accountRef),
+          }}
+        />
         <button
-          class={style.button}
-          disabled={!enableSave}
-          onClick={() =>
-            this.saveNewCatchData(newSettings, this.props.accountRef)
-          }
+          class={`${style.button} ${buttonStyle.button}`}
+          onClick={this.logOutButtonHandler}
         >
-          {getSaveButtonContent(isSaving, enableSave)}
-        </button>
-        {showError && (
-          <div class={style.error}>
-            There was an error saving your catches - please check your network
-            connection and then try again.
-          </div>
-        )}
-        <button class={style['button']} onClick={this.logOutButtonHandler}>
           Log Out
         </button>
       </Fragment>

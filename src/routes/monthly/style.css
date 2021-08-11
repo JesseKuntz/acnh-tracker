@@ -15,6 +15,7 @@
 .specimen-container {
   display: flex;
   flex-wrap: wrap;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .month-selector{
@@ -23,6 +24,10 @@
   font-weight: bold;
   color: #444;
   border-radius: 4px;
+}
+
+.button {
+  margin-top: 20px;
 }
 
 @media only screen and (min-width: 600px)  {

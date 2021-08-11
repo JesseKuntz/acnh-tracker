@@ -1,0 +1,29 @@
+.button {
+  height: 50px;
+  background: teal;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid #004d4d;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  margin-bottom: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+button:disabled,
+button[disabled] {
+  border: 2px solid #004d4d80;
+  background: #36817F80;
+  cursor: default;
+}
+
+.error {
+  color: red;
+  margin-bottom: 24px;
+  font-size: 18px;
+}

@@ -2,13 +2,13 @@ import { h, Fragment, Component } from 'preact';
 
 import Specimen from './index';
 import Specimens from '../../assets/index';
+import SaveButton from '../save-button';
 
 import style from './style.css';
 
 import saveCatchData from '../../fauna/save-catch-data';
 import { areObjectsDifferent } from '../support/diff-objects';
 import { slugify } from '../support/slugify';
-import { getSaveButtonContent } from '../support/get-save-button-content';
 
 function filterSpecimen() {
   const input = document.getElementById('specimen-filter');
@@ -128,19 +128,15 @@ export default class SpecimenContainer extends Component {
 
     return (
       <Fragment>
-        <button
-          disabled={!enableSave}
-          class={style.button}
-          onClick={() => this.saveNewCatchData(catchData, accountRef, type)}
-        >
-          {getSaveButtonContent(isSaving, enableSave)}
-        </button>
-        {showError && (
-          <div class={style.error}>
-            There was an error saving your catches - please check your network
-            connection and then try again.
-          </div>
-        )}
+        <SaveButton
+          {...{
+            enableSave,
+            isSaving,
+            showError,
+            clickHandler: () =>
+              this.saveNewCatchData(catchData, accountRef, type),
+          }}
+        />
         <input
           type="text"
           id="specimen-filter"
