@@ -120,18 +120,40 @@ function removeCatch({
   }
 }
 
-function saveCatches({ catchData, data, accountRef }) {
-  console.log(catchData);
-  console.log(data);
-
+async function saveCatches({
+  catchData,
+  fullData,
+  accountRef,
+  setIsSaving,
+  setShowError,
+}) {
   const types = [];
+  const copyOfFullData = JSON.parse(JSON.stringify(fullData));
 
-  // Add catchData to data AND the type to types if there is data
-  Object.keys(catchData).forEach(type => {});
+  Object.keys(catchData).forEach(type => {
+    const specimens = Object.keys(catchData[type]);
 
-  types.forEach(type => {
-    // saveCatchData(data[type], accountRef, type)
+    if (specimens.length) {
+      types.push(type);
+
+      specimens.forEach(specimen => {
+        copyOfFullData[type][specimen] = true;
+      });
+    }
   });
+
+  setIsSaving(true);
+
+  const results = await Promise.all(
+    types.map(type => saveCatchData(copyOfFullData[type], accountRef, type))
+  );
+
+  if (results[0].data) {
+    return window.location.reload();
+  }
+
+  setIsSaving(false);
+  return setShowError(true);
 }
 
 function renderSpecimens(
@@ -193,6 +215,7 @@ function Monthly({ data, accountRef, isLoading }) {
   const date = new Date();
 
   const [month, setMonth] = useState(date.getMonth());
+  const [fullData, setFullData] = useState(null);
   const [catchData, setCatchData] = useState({});
   const [isSaving, setIsSaving] = useState(false);
   const [enableSave, setEnableSave] = useState(false);
@@ -203,7 +226,11 @@ function Monthly({ data, accountRef, isLoading }) {
   let monthData = [];
 
   if (dataExists(data)) {
-    monthData = getMonthData(data, formattedMonth);
+    if (!fullData) {
+      setFullData(data);
+    }
+
+    monthData = getMonthData(fullData || data, formattedMonth);
   }
 
   const renderSpecimensArgs = {
@@ -235,7 +262,7 @@ function Monthly({ data, accountRef, isLoading }) {
               clickHandler: () =>
                 saveCatches({
                   catchData,
-                  data,
+                  fullData,
                   accountRef,
                   setIsSaving,
                   setShowError,
