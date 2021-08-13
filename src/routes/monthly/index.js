@@ -2,12 +2,14 @@ import { h, Fragment } from 'preact';
 import { useState } from 'preact/hooks';
 
 import VerboseSpecimen from '../../components/specimen/verbose-specimen';
+import SaveButton from '../../components/save-button';
 
 import specimenData from '../../assets/index';
 
 import { slugify } from '../../components/support/slugify';
 import { renderSpinner } from '../../components/support/render-spinner';
 import { dataExists } from '../../components/support/data-exists';
+import saveCatchData from '../../fauna/save-catch-data';
 
 import style from './style.css';
 
@@ -52,10 +54,6 @@ function shouldAddSpecimen(month, specimen, type, hemisphere, data) {
 }
 
 function getMonthData(data, month) {
-  if (!dataExists(data)) {
-    return [];
-  }
-
   const hemisphere = data.settings.northern ? 'northern' : 'southern';
 
   const monthData = { fish: [], bug: [], 'sea-creature': [] };
@@ -81,11 +79,98 @@ function getMonthData(data, month) {
   return monthData;
 }
 
-function renderSpecimens(monthData, type) {
+function addCatch({ specimen, type, catchData, setCatchData, setEnableSave }) {
+  const copyOfCatchData = Object.assign({}, catchData);
+
+  if (!copyOfCatchData[type]) {
+    copyOfCatchData[type] = {};
+  }
+  const slug = slugify(specimen.name);
+
+  copyOfCatchData[type][slug] = true;
+
+  setCatchData(copyOfCatchData);
+
+  setEnableSave(true);
+}
+
+function removeCatch({
+  specimen,
+  type,
+  catchData,
+  setCatchData,
+  setEnableSave,
+}) {
+  const copyOfCatchData = Object.assign({}, catchData);
+
+  const slug = slugify(specimen.name);
+
+  delete copyOfCatchData[type][slug];
+
+  setCatchData(copyOfCatchData);
+
+  let catchCount = 0;
+
+  Object.keys(copyOfCatchData).forEach(type => {
+    catchCount += Object.keys(copyOfCatchData[type]).length;
+  });
+
+  if (!catchCount) {
+    setEnableSave(false);
+  }
+}
+
+async function saveCatches({
+  catchData,
+  fullData,
+  accountRef,
+  setIsSaving,
+  setShowError,
+}) {
+  const types = [];
+  const copyOfFullData = JSON.parse(JSON.stringify(fullData));
+
+  Object.keys(catchData).forEach(type => {
+    const specimens = Object.keys(catchData[type]);
+
+    if (specimens.length) {
+      types.push(type);
+
+      specimens.forEach(specimen => {
+        copyOfFullData[type][specimen] = true;
+      });
+    }
+  });
+
+  setIsSaving(true);
+
+  const results = await Promise.all(
+    types.map(type => saveCatchData(copyOfFullData[type], accountRef, type))
+  );
+
+  if (results[0].data) {
+    return window.location.reload();
+  }
+
+  setIsSaving(false);
+  return setShowError(true);
+}
+
+function renderSpecimens(
+  { monthData, catchData, setCatchData, setEnableSave },
+  type
+) {
   let location;
   if (type === 'sea-creature') {
     location = 'Ocean';
   }
+
+  const catchHandlerProps = {
+    type,
+    catchData,
+    setCatchData,
+    setEnableSave,
+  };
 
   return (
     <div class={style['specimen-container']}>
@@ -96,6 +181,13 @@ function renderSpecimens(monthData, type) {
           name={specimen.name}
           location={specimen.catchData.location || location}
           time={specimen.catchData.time}
+          addCatch={() => addCatch({ specimen, ...catchHandlerProps })}
+          removeCatch={() =>
+            removeCatch({
+              specimen,
+              ...catchHandlerProps,
+            })
+          }
         />
       ))}
     </div>
@@ -119,13 +211,34 @@ function getMonthSelect(currentMonth, setMonth) {
   );
 }
 
-function Monthly({ data, isLoading }) {
+function Monthly({ data, accountRef, isLoading }) {
   const date = new Date();
+
   const [month, setMonth] = useState(date.getMonth());
+  const [fullData, setFullData] = useState(null);
+  const [catchData, setCatchData] = useState({});
+  const [isSaving, setIsSaving] = useState(false);
+  const [enableSave, setEnableSave] = useState(false);
+  const [showError, setShowError] = useState(false);
 
   const formattedMonth = monthMap[month];
 
-  const monthData = getMonthData(data, formattedMonth);
+  let monthData = [];
+
+  if (dataExists(data)) {
+    if (!fullData) {
+      setFullData(data);
+    }
+
+    monthData = getMonthData(fullData || data, formattedMonth);
+  }
+
+  const renderSpecimensArgs = {
+    monthData,
+    catchData,
+    setCatchData,
+    setEnableSave,
+  };
 
   return (
     <div class={style.monthly}>
@@ -140,13 +253,28 @@ function Monthly({ data, isLoading }) {
             <h2>Here's what you need to catch in:</h2>
             {getMonthSelect(formattedMonth, setMonth)}
           </div>
-
+          <SaveButton
+            {...{
+              enableSave,
+              isSaving,
+              showError,
+              className: style.button,
+              clickHandler: () =>
+                saveCatches({
+                  catchData,
+                  fullData,
+                  accountRef,
+                  setIsSaving,
+                  setShowError,
+                }),
+            }}
+          />
           <h3>Fish:</h3>
-          {renderSpecimens(monthData, 'fish')}
+          {renderSpecimens(renderSpecimensArgs, 'fish')}
           <h3>Bugs:</h3>
-          {renderSpecimens(monthData, 'bug')}
+          {renderSpecimens(renderSpecimensArgs, 'bug')}
           <h3>Sea Creatures:</h3>
-          {renderSpecimens(monthData, 'sea-creature')}
+          {renderSpecimens(renderSpecimensArgs, 'sea-creature')}
         </Fragment>
       ) : (
         !isLoading && (

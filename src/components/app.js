@@ -135,6 +135,7 @@ export default class App extends Component {
           />
           <Monthly
             path="/monthly"
+            accountRef={accountReference}
             data={this.state.specimenData.data}
             isLoading={this.state.isLoading}
           />
