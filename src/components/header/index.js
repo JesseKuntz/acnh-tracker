@@ -38,7 +38,13 @@ class Header extends Component {
               onClick={() => this.setState({ isMenuOpen: false })}
             >
               <h1>AC Tracker</h1>
-              <img class={style.check} src="../../assets/menu/check.svg" />
+              <img
+                class={style.check}
+                src="../../assets/menu/check.svg"
+                alt="check icon"
+                width={56}
+                height={56}
+              />
             </Link>
 
             <div class={style['hamburger-buns']}>

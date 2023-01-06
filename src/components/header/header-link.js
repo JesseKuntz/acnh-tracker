@@ -18,7 +18,13 @@ function HeaderLink({ type, clickHandler, href }) {
     >
       <div class={`${style.content} ${style['menu-link-wrapper']}`}>
         <div class={style['menu-text']}>{processType(type)}</div>
-        <img class={style.icon} src={`../../assets/menu/${type}.svg`} />
+        <img
+          class={style.icon}
+          src={`../../assets/menu/${type}.svg`}
+          alt={type}
+          width={70}
+          height={55}
+        />
       </div>
     </Link>
   );

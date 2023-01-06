@@ -40,7 +40,13 @@ function VerboseSpecimen({
           srcset={`../../assets/${type}/png/${image}.png`}
           type="image/png"
         />
-        <img class={style.logo} src={`../../assets/${type}/png/${image}.png`} />
+        <img
+          class={style.logo}
+          src={`../../assets/${type}/png/${image}.png`}
+          alt={name}
+          width={64}
+          height={64}
+        />
       </picture>
       <div class={style['verbose-title']}>{name}</div>
       <div class={style['info-container']}>

@@ -48,6 +48,9 @@ export default class Specimen extends Component {
           <img
             class={style.logo}
             src={`../../assets/${type}/png/${image}.png`}
+            alt={name}
+            width={64}
+            height={64}
           />
         </picture>
         <div class={style.textContainer}>

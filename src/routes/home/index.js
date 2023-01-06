@@ -12,6 +12,9 @@ function Home() {
         <img
           class={style['hero-image']}
           src="../../assets/icons/hero-image.png"
+          alt="bug net and fishing rod logo"
+          height={200}
+          width={200}
         />
       </picture>
       <p>
@@ -24,15 +27,33 @@ function Home() {
       <div class={style['specimen-button-container']}>
         <a class={style['specimen-button']} href="/tracker/fish">
           Fish
-          <img class={style.icon} src={`../../assets/menu/fish.svg`} />
+          <img
+            class={style.icon}
+            src={`../../assets/menu/fish.svg`}
+            alt="fish"
+            width={46}
+            height={46}
+          />
         </a>
         <a class={style['specimen-button']} href="/tracker/bug">
           Bugs
-          <img class={style.icon} src={`../../assets/menu/bug.svg`} />
+          <img
+            class={style.icon}
+            src={`../../assets/menu/bug.svg`}
+            alt="bug"
+            width={46}
+            height={46}
+          />
         </a>
         <a class={style['specimen-button']} href="/tracker/sea-creature">
           Sea Creatures
-          <img class={style.icon} src={`../../assets/menu/sea-creature.svg`} />
+          <img
+            class={style.icon}
+            src={`../../assets/menu/sea-creature.svg`}
+            alt="sea creature"
+            width={46}
+            height={46}
+          />
         </a>
       </div>
       <div class={style.footer}>
