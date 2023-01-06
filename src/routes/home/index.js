@@ -35,6 +35,16 @@ function Home() {
           <img class={style.icon} src={`../../assets/menu/sea-creature.svg`} />
         </a>
       </div>
+      <div class={style.footer}>
+        Made with 💙 by&nbsp;
+        <a
+          href="https://jessekuntz.github.io/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Jesse Kuntz
+        </a>
+      </div>
     </div>
   );
 }
