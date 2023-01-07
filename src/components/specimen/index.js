@@ -35,6 +35,8 @@ export default class Specimen extends Component {
       <div
         class={getSpecimenClass(this.state.selected)}
         onClick={this.clickHandler}
+        onKeyUp={event => event.code === 'Enter' && this.clickHandler()}
+        tabIndex="0"
       >
         <picture>
           <source

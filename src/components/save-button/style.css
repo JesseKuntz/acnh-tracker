@@ -15,10 +15,14 @@
   outline: none;
 }
 
+.button:focus {
+  border-color: blue;
+}
+
 button:disabled,
 button[disabled] {
   border: 2px solid #004d4d80;
-  background: #36817F80;
+  background: #36817f80;
   cursor: default;
 }
 

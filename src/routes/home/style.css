@@ -27,6 +27,10 @@
   text-decoration: none;
 }
 
+.specimen-button:focus {
+  border-color: blue;
+}
+
 .icon {
   width: 46px;
   margin-left: 8px;

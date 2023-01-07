@@ -51,6 +51,8 @@ class Header extends Component {
               <div
                 class={getHamburgerClass(this.state.isMenuOpen)}
                 onClick={() => this.clickHandler()}
+                onKeyUp={event => event.code === 'Enter' && this.clickHandler()}
+                tabIndex="0"
               >
                 <div class={style.bar1} />
                 <div class={style.bar2} />
