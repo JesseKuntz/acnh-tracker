@@ -188,6 +188,7 @@ function renderSpecimens(
               ...catchHandlerProps,
             })
           }
+          key={specimen.name}
         />
       ))}
     </div>
@@ -196,7 +197,7 @@ function renderSpecimens(
 
 function getMonthSelect(currentMonth, setMonth) {
   const options = Object.values(monthMap).map(month => (
-    <option selected={month === currentMonth}>
+    <option selected={month === currentMonth} key={month}>
       {month} {monthEmojiMap[month]}
     </option>
   ));

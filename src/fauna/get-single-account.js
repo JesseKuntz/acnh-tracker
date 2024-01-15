@@ -2,19 +2,19 @@ import { client, q } from './db';
 
 function getSingleAccount(email) {
   return client
-    .query(q.Paginate(q.Match(q.Ref('indexes/all_accounts'))))
+    .query(q.Paginate(q.Match(q.Index('account_by_email'), email)))
     .then(response => {
-      const productRefs = response.data;
+      const accounts = response.data;
 
-      const getAllProductDataQuery = productRefs.map(ref => {
+      const getAccountQuery = accounts.map(ref => {
         return q.Get(ref);
       });
 
-      return client.query(getAllProductDataQuery).then(data => {
-        return data.find(account => account.data.email === email);
+      return client.query(getAccountQuery).then(data => {
+        return data[0];
       });
     })
-    .catch(error => console.log('error', error.message)); // eslint-disable-line
+    .catch((error) => console.log("error", error.message)); // eslint-disable-line
 }
 
 export default getSingleAccount;

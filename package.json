@@ -6,7 +6,7 @@
   "scripts": {
     "build": "preact build",
     "serve": "sirv build --cors --single",
-    "dev": "preact watch",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider preact watch",
     "lint": "eslint . --fix",
     "test": "jest"
   },
