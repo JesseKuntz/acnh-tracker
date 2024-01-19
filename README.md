@@ -7,7 +7,7 @@
   Animal Crossing Tracker
 </h1>
 
-### [👉 Full Project Description 👈](https://jessekuntz.github.io/?project=ac-tracker)
+### [👉 Full Project Description 👈](https://jessekuntz.github.io/ac-tracker.html)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1671ee90-895c-4d71-aaca-62b263f16802/deploy-status)](https://app.netlify.com/sites/ac-tracker/deploys)
 
