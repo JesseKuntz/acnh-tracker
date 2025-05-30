@@ -9,6 +9,7 @@
   width: 260px;
   height: 50px;
   background: white;
+  color: black;
   font-size: 18px;
   font-weight: bold;
   border: 1px solid white;
@@ -28,11 +29,12 @@
   float: left;
   margin-right: 12px;
   text-overflow: ellipsis;
-  max-width: 200px;
+  max-width: 240px;
   overflow: hidden;
+  white-space: nowrap;
 }
 
-.settings {
+.settings-link {
   cursor: pointer;
   background: white;
   display: inline-block;

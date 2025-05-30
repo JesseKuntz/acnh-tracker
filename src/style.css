@@ -1,0 +1,34 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #fafafa;
+  font-family: "Helvetica Neue", arial, sans-serif;
+  font-weight: 400;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --page-padding-top: 118px;
+}
+
+body {
+  margin: 0;
+}
+
+#app {
+  height: 100%;
+  max-width: 1080px;
+  margin: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #eee;
+    background-color: #1a1a1a;
+  }
+}
