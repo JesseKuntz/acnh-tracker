@@ -13,16 +13,8 @@
 
 ## Running Things
 
-``` bash
-# install dependencies
-npm install
+- `npm run dev` - Starts a dev server at http://localhost:5173/
 
-# serve with hot reload at localhost:8080
-npm run dev
+- `npm run build` - Builds for production, emitting to `dist/`
 
-# build for production with minification
-npm run build
-
-# test the production build locally
-npm run serve
-```
+- `npm run preview` - Starts a server at http://localhost:4173/ to test production build locally

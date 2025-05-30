@@ -1,0 +1,27 @@
+.settings {
+  padding: var(--page-padding-top) 14px;
+}
+
+.title {
+  margin-right: 20px;
+  margin-bottom: 0;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+}
+
+.radio-container {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.radio-container input {
+  margin-right: 20px;
+}
+
+.settings-button {
+  width: 220px;
+  margin: 20px 20px 20px 0;
+}

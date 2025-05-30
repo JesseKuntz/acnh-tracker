@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`LoginInfo matches snapshot 1`] = `
-<div
-  className="info-container"
->
-  <LoginButton />
-</div>
-`;

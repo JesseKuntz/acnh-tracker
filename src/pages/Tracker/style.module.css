@@ -1,0 +1,14 @@
+.tracker {
+  padding: var(--page-padding-top) 14px 56px;
+}
+
+.title {
+  text-transform: capitalize;
+  margin-right: 20px;
+  margin-bottom: 0;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+}

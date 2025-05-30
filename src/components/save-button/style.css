@@ -1,4 +1,4 @@
-.button {
+.save-button {
   height: 50px;
   background: teal;
   font-size: 18px;
@@ -15,7 +15,7 @@
   outline: none;
 }
 
-.button:focus {
+.save-button:focus {
   border-color: blue;
 }
 
